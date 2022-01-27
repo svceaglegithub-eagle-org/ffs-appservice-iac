@@ -36,5 +36,5 @@ steps:
     subscriptionId: 'ef49d86b-2dce-461d-abcf-8c307394ad00'
     resourceGroupName: 'rg-core-bd'
     location: 'South Central US'
-    csmFile: '$(System.DefaultWorkingDirectory)/_svceaglegithub-eagle-org_api-deploy-apim-vs/${{parameters.AppServiceName}}/app-service.template.json'
-    csmParametersFile: '$(System.DefaultWorkingDirectory)/_svceaglegithub-eagle-org_api-deploy-apim-vs/${{parameters.AppServiceName}}/app-service.parameters.json'
+    csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
+    csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
