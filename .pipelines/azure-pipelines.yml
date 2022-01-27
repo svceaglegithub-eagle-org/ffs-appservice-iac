@@ -22,6 +22,13 @@ pool:
   vmImage: VMJMPWA004
 
 steps:
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)/_svceaglegithub-eagle-org_ffs-appservice-iac'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+    CleanTargetFolder: true
+
 - task: AzureResourceManagerTemplateDeployment@3
   displayName: 'ARM Template deployment: Resource Group scope'
   inputs:
