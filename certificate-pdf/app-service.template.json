@@ -56,7 +56,11 @@
                         {
                             "name": "APP_KIND",
                             "value": "workflowApp"
-                        }       
+                        },
+                        {
+                            "name": "test",
+                            "value": "hello1"
+                        }                  
                     
                     
                     ],
