@@ -7,23 +7,27 @@ trigger:
 - none
 
 parameters:
-  - name: templateFile
+  - name: AppServiceName
     type: string
-    default: 'certificate-pdf/app-service.parameters.json'
+    default: 'certificate-pdf'
     values:
-      - 'certificate-pdf/app-service.parameters.json'
-      - 'ext-user-service/app-service.parameters.json'
-      - 'vessel-service/app-service.parameters.json'
-      - 'workorder-service/app-service.parameters.json'
+      - 'certificate-pdf'
+      - 'ext-user-service'
+      - 'vessel-service'
+      - 'workorder-service'
+
 
 pool:
-  vmImage: ubuntu-latest
+  name: VMJMPWA003Agent
+  vmImage: VMJMPWA003
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: AzureResourceManagerTemplateDeployment@3
+  displayName: 'ARM Template deployment: Resource Group scope'
+  inputs:
+    azureResourceManagerConnection: 'IMS BuildandDeploy'
+    subscriptionId: 'ef49d86b-2dce-461d-abcf-8c307394ad00'
+    resourceGroupName: 'rg-core-bd'
+    location: 'South Central US'
+    csmFile: '$(System.DefaultWorkingDirectory)/_svceaglegithub-eagle-org_api-deploy-apim-vs/${{ parameters.AppServiceName}}/app-service.template.json'
+    csmParametersFile: '$(System.DefaultWorkingDirectory)/_svceaglegithub-eagle-org_api-deploy-apim-vs/${{ parameters.AppServiceName}}/app-service.parameters.json'
