@@ -25,7 +25,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)/_svceaglegithub-eagle-org_ffs-appservice-iac'
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
     TargetFolder: '$(build.artifactstagingdirectory)'
     CleanTargetFolder: true
 
