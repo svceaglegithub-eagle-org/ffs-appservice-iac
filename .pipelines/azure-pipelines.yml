@@ -18,8 +18,8 @@ parameters:
 
 
 pool:
-  name: VMJMPWA003Agent
-  vmImage: VMJMPWA003
+  name: VMJMPWA004Agent
+  vmImage: VMJMPWA004
 
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
