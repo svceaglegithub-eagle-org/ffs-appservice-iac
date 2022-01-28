@@ -28,8 +28,9 @@ parameters:
 
 
 pool:
-  name: VMJMPWA004Agent
-  vmImage: VMJMPWA004
+  ${{ if eq [${parameters.Environment}], 'BuildandDeploy') }}:
+    name: VMJMPWA004Agent
+    vmImage: VMJMPWA004
 
 steps:
 - task: CopyFiles@2
