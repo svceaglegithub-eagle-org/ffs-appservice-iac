@@ -52,3 +52,8 @@ jobs:
           location: 'South Central US'
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
+          
+  - job: Foo
+
+    steps:
+     - script: echo Hello!        
