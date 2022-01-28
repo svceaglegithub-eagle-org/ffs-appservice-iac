@@ -69,6 +69,7 @@ jobs:
           CleanTargetFolder: true
           
       - script: echo $(ParamsFile)
+      - script: echo $(isDev)
       
       - task: AzureResourceManagerTemplateDeployment@3
         displayName: 'ARM Template deployment: Resource Group scope'
