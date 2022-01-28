@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "subscriptionId": {
-            "value": "ef49d86b-2dce-461d-abcf-8c307394ad00"
+            "value": "d96bdf11-1497-4091-a786-ca95a185dcba"
         },
         "name": {
             "value": "test-001-apps"
@@ -15,7 +15,7 @@
             "value": "ASP-test-001-apps"
         },
         "serverFarmResourceGroup": {
-            "value": "rg-core-bd"
+            "value": "rg-core-dev"
         },
         "alwaysOn": {
             "value": true
