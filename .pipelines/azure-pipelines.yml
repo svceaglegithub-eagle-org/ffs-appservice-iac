@@ -76,4 +76,5 @@ jobs:
           location: 'South Central US'
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${variables.isDev}.parameters.json'
+      -script: echo $csmParametersFile
           
