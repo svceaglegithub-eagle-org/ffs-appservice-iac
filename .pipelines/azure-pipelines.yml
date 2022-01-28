@@ -26,6 +26,8 @@ parameters:
       - 'UAT'
       - 'Production'
 
+variables:
+   isBuildandDeploy: $[eq(parameters.Environment, 'BuildandDeploy')]
 
 pool:
   ${{ if eq(parameters.Environment, 'BuildandDeploy') }}:
@@ -33,19 +35,24 @@ pool:
     vmImage: VMJMPWA004
 
 steps:
-- task: CopyFiles@2
-  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-  inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
-    TargetFolder: '$(build.artifactstagingdirectory)'
-    CleanTargetFolder: true
+  - script: echo Hello Stage B!
+  - script: echo $(isBuildandDeploy)
 
-- task: AzureResourceManagerTemplateDeployment@3
-  displayName: 'ARM Template deployment: Resource Group scope'
-  inputs:
-    azureResourceManagerConnection: 'IMS BuildandDeploy'
-    subscriptionId: 'ef49d86b-2dce-461d-abcf-8c307394ad00'
-    resourceGroupName: 'rg-core-bd'
-    location: 'South Central US'
-    csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
-    csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
+steps:
+condition: and(succeeded(), eq(variables.isBuildandDeploy, 'true'))
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+    inputs:
+      SourceFolder: '$(System.DefaultWorkingDirectory)'
+      TargetFolder: '$(build.artifactstagingdirectory)'
+      CleanTargetFolder: true
+
+  - task: AzureResourceManagerTemplateDeployment@3
+    displayName: 'ARM Template deployment: Resource Group scope'
+    inputs:
+      azureResourceManagerConnection: 'IMS BuildandDeploy'
+      subscriptionId: 'ef49d86b-2dce-461d-abcf-8c307394ad00'
+      resourceGroupName: 'rg-core-bd'
+      location: 'South Central US'
+      csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
+      csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
