@@ -28,7 +28,7 @@ parameters:
 
 
 pool:
-  ${{ if eq (${parameters.Environment}, 'BuildandDeploy') }}:
+  ${{ if eq(parameters.Environment, 'BuildandDeploy') }}:
     name: VMJMPWA004Agent
     vmImage: VMJMPWA004
 
