@@ -51,8 +51,8 @@ jobs:
           subscriptionId: 'ef49d86b-2dce-461d-abcf-8c307394ad00'
           resourceGroupName: 'rg-core-bd'
           location: 'South Central US'
-          csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
-          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
+          csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
+          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
 
   - job: DeployonDev
     condition: and(succeeded(), eq(variables.isDev, 'true'))
@@ -74,6 +74,6 @@ jobs:
           subscriptionId: 'd96bdf11-1497-4091-a786-ca95a185dcba'
           resourceGroupName: 'rg-core-dev'
           location: 'South Central US'
-          csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
+          csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
           
