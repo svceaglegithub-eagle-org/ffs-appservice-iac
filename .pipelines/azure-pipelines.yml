@@ -70,6 +70,7 @@ jobs:
           
       - script: echo $(ParamsFile)
       - script: echo $(isDev)
+      - script: echo ${{parameters.Environment}
       
       - task: AzureResourceManagerTemplateDeployment@3
         displayName: 'ARM Template deployment: Resource Group scope'
