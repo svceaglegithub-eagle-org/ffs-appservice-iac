@@ -27,12 +27,12 @@ parameters:
       - 'Production'
 
 variables:
-   isBuildandDeploy: ${{ eq(parameters.Environment, 'BuildandDeploy') }}
-   isDev: ${{ eq(parameters.Environment, 'Development') }}
+   BuildandDeploy: ${{ eq(parameters.Environment, 'BuildandDeploy') }}
+   Dev: ${{ eq(parameters.Environment, 'Development') }}
    
 jobs:
   - job: DeployonBuildandDeploy
-    condition: and(succeeded(), eq(variables.isBuildandDeploy, 'true'))
+    condition: and(succeeded(), eq(variables.BuildandDeploy, 'true'))
     pool: 
       name: VMJMPWA004Agent
       vmImage: VMJMPWA004
@@ -55,7 +55,7 @@ jobs:
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
 
   - job: DeployonDev
-    condition: and(succeeded(), eq(variables.isDev, 'true'))
+    condition: and(succeeded(), eq(variables.Dev, 'true'))
     pool: 
       name: VMJMPWA001Agent
       vmImage: VMJMPWA001
