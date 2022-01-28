@@ -29,7 +29,6 @@ parameters:
 variables:
    isBuildandDeploy: ${{ eq(parameters.Environment, 'BuildandDeploy') }}
    isDev: ${{ eq(parameters.Environment, 'Development') }}
-   ParamsFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
    
 jobs:
   - job: DeployonBuildandDeploy
@@ -67,11 +66,7 @@ jobs:
           SourceFolder: '$(System.DefaultWorkingDirectory)'
           TargetFolder: '$(build.artifactstagingdirectory)'
           CleanTargetFolder: true
-          
-      - script: echo $(ParamsFile)
-      - script: echo $(isDev)
-      - script: echo ${{parameters.Environment}}
-      
+           
       - task: AzureResourceManagerTemplateDeployment@3
         displayName: 'ARM Template deployment: Resource Group scope'
         inputs:
