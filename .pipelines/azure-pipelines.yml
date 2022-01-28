@@ -31,7 +31,6 @@ variables:
    
 jobs:
   - job: DeployonDev
-    displayname: "Deploy on BuildandDeploy"
     condition: and(succeeded(), eq(variables.isBuildandDeploy, 'true'))
     pool: 
       name: VMJMPWA004Agent
