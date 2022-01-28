@@ -28,9 +28,10 @@ parameters:
 
 variables:
    isBuildandDeploy: ${{ eq(parameters.Environment, 'BuildandDeploy') }}
+   isDev: ${{ eq(parameters.Environment, 'Development') }}
    
 jobs:
-  - job: DeployonDev
+  - job: DeployonBuildandDeploy
     condition: and(succeeded(), eq(variables.isBuildandDeploy, 'true'))
     pool: 
       name: VMJMPWA004Agent
@@ -49,6 +50,30 @@ jobs:
           azureResourceManagerConnection: 'IMS BuildandDeploy'
           subscriptionId: 'ef49d86b-2dce-461d-abcf-8c307394ad00'
           resourceGroupName: 'rg-core-bd'
+          location: 'South Central US'
+          csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
+          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
+
+jobs:
+  - job: DeployonDev
+    condition: and(succeeded(), eq(variables.isDev, 'true'))
+    pool: 
+      name: VMJMPWA001Agent
+      vmImage: VMJMPWA001
+    steps:
+      - task: CopyFiles@2
+        displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+        inputs:
+          SourceFolder: '$(System.DefaultWorkingDirectory)'
+          TargetFolder: '$(build.artifactstagingdirectory)'
+          CleanTargetFolder: true
+
+      - task: AzureResourceManagerTemplateDeployment@3
+        displayName: 'ARM Template deployment: Resource Group scope'
+        inputs:
+          azureResourceManagerConnection: 'IMS Development'
+          subscriptionId: 'd96bdf11-1497-4091-a786-ca95a185dcba'
+          resourceGroupName: 'rg-core-dev'
           location: 'South Central US'
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
