@@ -27,7 +27,7 @@ parameters:
       - 'Production'
 
 variables:
-   isBuildandDeploy: $[eq(parameters.Environment, 'BuildandDeploy')]
+   isBuildandDeploy: $[eq(${parameters.AppServiceName}, 'BuildandDeploy')]
    
 jobs:
   - job: DeployonDev
