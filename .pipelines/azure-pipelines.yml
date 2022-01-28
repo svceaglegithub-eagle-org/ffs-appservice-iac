@@ -29,7 +29,7 @@ parameters:
 variables:
    isBuildandDeploy: ${{ eq(parameters.Environment, 'BuildandDeploy') }}
    isDev: ${{ eq(parameters.Environment, 'Development') }}
-   ParamsFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${variables.isDev}.parameters.json'
+   ParamsFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
    
 jobs:
   - job: DeployonBuildandDeploy
@@ -80,6 +80,5 @@ jobs:
           resourceGroupName: 'rg-core-dev'
           location: 'South Central US'
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
-          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${variables.isDev}.parameters.json'
-      - script: echo $(csmParametersFile)
+          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
           
