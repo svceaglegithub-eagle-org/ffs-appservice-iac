@@ -20,12 +20,6 @@
         "alwaysOn": {
             "value": true
         },
-        "sku": {
-            "value": "PremiumV2"
-        },
-        "skuCode": {
-            "value": "P1v2"
-        },
         "hostingEnvironmentProfile": {
             "value": {
                 "id": "/subscriptions/d96bdf11-1497-4091-a786-ca95a185dcba/resourceGroups/rg-core-dev/providers/Microsoft.Web/hostingEnvironments/ase-core-ims-dev"
