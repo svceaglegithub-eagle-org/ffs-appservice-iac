@@ -15,6 +15,16 @@ parameters:
       - 'ext-user-service'
       - 'vessel-service'
       - 'workorder-service'
+      
+  - name: Environment
+    type: string
+    default: 'BuildandDeploy'
+    values:
+      - 'BuildandDeploy'
+      - 'Development'
+      - 'QA'
+      - 'UAT'
+      - 'Production'
 
 
 pool:
