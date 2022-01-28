@@ -27,12 +27,12 @@ parameters:
       - 'Production'
 
 variables:
-   BuildandDeploy: ${{ eq(parameters.Environment, 'BuildandDeploy') }}
-   Dev: ${{ eq(parameters.Environment, 'Development') }}
+   isBuildandDeploy: ${{ eq(parameters.Environment, 'BuildandDeploy') }}
+   isDev: ${{ eq(parameters.Environment, 'Development') }}
    
 jobs:
   - job: DeployonBuildandDeploy
-    condition: and(succeeded(), eq(variables.BuildandDeploy, 'true'))
+    condition: and(succeeded(), eq(variables.isBuildandDeploy, 'true'))
     pool: 
       name: VMJMPWA004Agent
       vmImage: VMJMPWA004
@@ -55,7 +55,7 @@ jobs:
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
 
   - job: DeployonDev
-    condition: and(succeeded(), eq(variables.Dev, 'true'))
+    condition: and(succeeded(), eq(variables.isDev, 'true'))
     pool: 
       name: VMJMPWA001Agent
       vmImage: VMJMPWA001
@@ -75,9 +75,5 @@ jobs:
           resourceGroupName: 'rg-core-dev'
           location: 'South Central US'
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
-          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
+          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${variables.isDev}.parameters.json'
           
-  - job: Foo
-
-    steps:
-     - script: echo Hello!        
