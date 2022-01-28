@@ -54,7 +54,6 @@ jobs:
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service.parameters.json'
 
-jobs:
   - job: DeployonDev
     condition: and(succeeded(), eq(variables.isDev, 'true'))
     pool: 
