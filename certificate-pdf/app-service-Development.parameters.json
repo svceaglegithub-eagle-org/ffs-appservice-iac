@@ -9,10 +9,10 @@
             "value": "test-001-apps"
         },
         "location": {
-            "value": "South Central US"
+            "value": "southcentralus"
         },
         "hostingPlanName": {
-            "value": "ASP-test-001-apps"
+            "value": "asp-core-ims-dev"
         },
         "serverFarmResourceGroup": {
             "value": "rg-core-dev"
