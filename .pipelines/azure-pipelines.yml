@@ -29,6 +29,8 @@ parameters:
 variables:
    isBuildandDeploy: ${{ eq(parameters.Environment, 'BuildandDeploy') }}
    isDev: ${{ eq(parameters.Environment, 'Development') }}
+   isQA: ${{ eq(parameters.Environment, 'QA') }}
+   isUAT: ${{ eq(parameters.Environment, 'UAT') }}
    
 jobs:
   - job: DeployonBuildandDeploy
@@ -78,7 +80,7 @@ jobs:
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
           
   - job: DeployonQA
-    condition: and(succeeded(), eq(variables.isDev, 'true'))
+    condition: and(succeeded(), eq(variables.isQA, 'true'))
     pool: 
       name: VMJMPWA003Agent
       vmImage: VMJMPWA003
@@ -100,8 +102,8 @@ jobs:
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
           
-  - job: DeployonQA
-    condition: and(succeeded(), eq(variables.isDev, 'true'))
+  - job: DeployonUAT
+    condition: and(succeeded(), eq(variables.isUAT, 'true'))
     pool: 
       name: VMJMPWA003Agent
       vmImage: VMJMPWA003
