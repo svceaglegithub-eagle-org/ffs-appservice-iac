@@ -77,3 +77,48 @@ jobs:
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
           
+  - job: DeployonQA
+    condition: and(succeeded(), eq(variables.isDev, 'true'))
+    pool: 
+      name: VMJMPWA003Agent
+      vmImage: VMJMPWA003
+    steps:
+      - task: CopyFiles@2
+        displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+        inputs:
+          SourceFolder: '$(System.DefaultWorkingDirectory)'
+          TargetFolder: '$(build.artifactstagingdirectory)'
+          CleanTargetFolder: true
+           
+      - task: AzureResourceManagerTemplateDeployment@3
+        displayName: 'ARM Template deployment: Resource Group scope'
+        inputs:
+          azureResourceManagerConnection: 'IMS UAT'
+          subscriptionId: '02d0afb7-fc62-4bcf-8215-45a2391a7030'
+          resourceGroupName: 'rg-ffs-qa'
+          location: 'South Central US'
+          csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
+          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
+          
+  - job: DeployonQA
+    condition: and(succeeded(), eq(variables.isDev, 'true'))
+    pool: 
+      name: VMJMPWA003Agent
+      vmImage: VMJMPWA003
+    steps:
+      - task: CopyFiles@2
+        displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+        inputs:
+          SourceFolder: '$(System.DefaultWorkingDirectory)'
+          TargetFolder: '$(build.artifactstagingdirectory)'
+          CleanTargetFolder: true
+           
+      - task: AzureResourceManagerTemplateDeployment@3
+        displayName: 'ARM Template deployment: Resource Group scope'
+        inputs:
+          azureResourceManagerConnection: 'IMS UAT'
+          subscriptionId: '02d0afb7-fc62-4bcf-8215-45a2391a7030'
+          resourceGroupName: 'rg-ffs-uat'
+          location: 'South Central US'
+          csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
+          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
