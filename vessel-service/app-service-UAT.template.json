@@ -38,7 +38,28 @@
             "properties": {
                 "name": "[parameters('name')]",
                 "siteConfig": {
-                    "appSettings": [],
+                    "appSettings": [
+                        {
+                            "name": "APPCONFIG_ENDPOINT",
+                            "value": "https://uat-apis-app-config.azconfig.io",
+                            "slotSetting": false
+                        },
+                        {
+                            "name": "NODE_ENV",
+                            "value": "FREDUAT",
+                            "slotSetting": false
+                        },
+                        {
+                            "name": "WEBSITE_HTTPLOGGING_RETENTION_DAYS",
+                            "value": "5",
+                            "slotSetting": false
+                        },
+                        {
+                            "name": "WEBSITE_VNET_ROUTE_ALL",
+                            "value": "1",
+                            "slotSetting": false
+                        }
+                    ],
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
                     "alwaysOn": "[parameters('alwaysOn')]"
                 },
