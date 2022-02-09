@@ -47,7 +47,7 @@
                     "appSettings": [
                         {
                             "name": "APPCONFIG_ENDPOINT",
-                            "value": "https://uat-apis-app-config.azconfig.io",
+                            "value": "https://app-cfg-uat-01.azconfig.io",
                             "slotSetting": false
                         },
                         {
