@@ -48,7 +48,7 @@
                     "appSettings": [
 					  {
 						"name": "NODE_ENV",
-						"value": "VM",
+						"value": "FREDD16",
 						"slotSetting": false
 					  }
 					],
