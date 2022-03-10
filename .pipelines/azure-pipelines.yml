@@ -15,6 +15,7 @@ parameters:
       - 'ext-user-service'
       - 'vessel-service'
       - 'workorder-service'
+      - 'userapi-service'
       
   - name: Environment
     type: string
