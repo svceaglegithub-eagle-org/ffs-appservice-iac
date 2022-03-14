@@ -35,7 +35,7 @@
             "type": "Microsoft.Web/sites",
             "location": "[parameters('location')]",
             "tags": {
-			    "Environment": "DEV",
+			    "Environment": "QA",
                 "Location": "South Central US"
 			},
 			"identity": {
