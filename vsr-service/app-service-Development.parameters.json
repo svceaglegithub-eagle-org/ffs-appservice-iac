@@ -15,7 +15,7 @@
             "value": "asp-core-ims-dev"
         },
         "serverFarmResourceGroup": {
-            "value": "rg-ffs-dev-001"
+            "value": "rg-core-dev"
         },
         "alwaysOn": {
             "value": true
