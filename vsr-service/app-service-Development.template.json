@@ -50,7 +50,12 @@
 						"name": "NODE_ENV",
 						"value": "FREDD16",
 						"slotSetting": false
-					  }
+					  },
+			     		  {
+   					 	"name": "APPCONFIG_ENDPOINT",
+    						"value": "https://dev-apis-app-config.azconfig.io",
+    						"slotSetting": false
+ 					  }
 					],
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
                     "alwaysOn": "[parameters('alwaysOn')]"
