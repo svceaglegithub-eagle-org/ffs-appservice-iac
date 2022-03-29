@@ -16,6 +16,7 @@ parameters:
       - 'vessel-service'
       - 'workorder-service'
       - 'userapi-service'
+      - 'vsr-service'
       
   - name: Environment
     type: string
