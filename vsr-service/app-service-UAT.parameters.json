@@ -1,0 +1,32 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "02d0afb7-fc62-4bcf-8215-45a2391a7030"
+        },
+        "name": {
+            "value": "vsr-service"
+        },
+        "location": {
+            "value": "southcentralus"
+        },
+        "hostingPlanName": {
+            "value": "asp-ims-uat"
+        },
+        "serverFarmResourceGroup": {
+            "value": "rg-core-uat"
+        },
+        "alwaysOn": {
+            "value": true
+        },
+        "hostingEnvironmentProfile": {
+            "value": {
+                "id": "/subscriptions/02d0afb7-fc62-4bcf-8215-45a2391a7030/resourceGroups/rg-core-uat/providers/Microsoft.Web/hostingEnvironments/ase-ims-uat"
+            }
+        },
+        "linuxFxVersion": {
+            "value": "NODE|14-lts"
+        }
+    }
+}
