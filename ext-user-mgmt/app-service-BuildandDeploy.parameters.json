@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "ef49d86b-2dce-461d-abcf-8c307394ad00"
+        },
+        "name": {
+            "value": "test-001-apps"
+        },
+        "location": {
+            "value": "South Central US"
+        },
+        "hostingPlanName": {
+            "value": "ASP-test-001-apps"
+        },
+        "serverFarmResourceGroup": {
+            "value": "rg-core-bd"
+        },
+        "alwaysOn": {
+            "value": true
+        },
+        "sku": {
+            "value": "PremiumV2"
+        },
+        "skuCode": {
+            "value": "P1v2"
+        },
+        "workerSize": {
+            "value": "3"
+        },
+        "workerSizeId": {
+            "value": "3"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "linuxFxVersion": {
+            "value": "DOTNETCORE|5.0"
+        }
+    }
+}
