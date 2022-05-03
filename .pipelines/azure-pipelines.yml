@@ -13,6 +13,7 @@ parameters:
     values:
       - 'certificate-pdf'
       - 'ext-user-service'
+      - 'ext-user-mgmt'
       - 'vessel-service'
       - 'workorder-service'
       - 'userapi-service'
