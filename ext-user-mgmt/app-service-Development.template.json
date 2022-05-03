@@ -39,14 +39,11 @@
                 "name": "[parameters('name')]",
                 "siteConfig": {
                     "appSettings": [
-                        {
-                            "name": "APP_KIND",
-                            "value": "workflowApp"
-                        },
-                        {
-                            "name": "test",
-                            "value": "hello1"
-                        }                  
+                        { 
+	                        "name": "ASPNETCORE_ENVIRONMENT", 
+	                        "value": "FREDD16", 
+                            "slotSetting": false 
+                        }
                     
                     ],
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
