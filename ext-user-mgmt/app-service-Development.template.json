@@ -33,7 +33,13 @@
             "name": "[parameters('name')]",
             "type": "Microsoft.Web/sites",
             "location": "[parameters('location')]",
-            "tags": {},
+            "tags": {
+                "Environment": "DEV",
+                "Location": "South Central US"
+            },
+	    "identity": {
+                "type": "SystemAssigned"
+            },
             "dependsOn": [],
             "properties": {
                 "name": "[parameters('name')]",
