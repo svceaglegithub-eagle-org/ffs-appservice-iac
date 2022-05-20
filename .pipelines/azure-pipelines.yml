@@ -34,6 +34,7 @@ variables:
    isDev: ${{ eq(parameters.Environment, 'Development') }}
    isQA: ${{ eq(parameters.Environment, 'QA') }}
    isUAT: ${{ eq(parameters.Environment, 'UAT') }}
+   isProd: ${{ eq(parameters.Environment, 'Production') }}
    
 jobs:
   - job: DeployonBuildandDeploy
@@ -124,6 +125,29 @@ jobs:
           azureResourceManagerConnection: 'IMS UAT'
           subscriptionId: '02d0afb7-fc62-4bcf-8215-45a2391a7030'
           resourceGroupName: 'rg-ffs-uat'
+          location: 'South Central US'
+          csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
+          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
+
+  - job: DeployonProd
+    condition: and(succeeded(), eq(variables.isProd, 'true'))
+    pool: 
+      name: VMJMPWA005Agent
+      vmImage: VMJMPWA005
+    steps:
+      - task: CopyFiles@2
+        displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+        inputs:
+          SourceFolder: '$(System.DefaultWorkingDirectory)'
+          TargetFolder: '$(build.artifactstagingdirectory)'
+          CleanTargetFolder: true
+           
+      - task: AzureResourceManagerTemplateDeployment@3
+        displayName: 'ARM Template deployment: Resource Group scope'
+        inputs:
+          azureResourceManagerConnection: 'IMS Production'
+          subscriptionId: '1e9801a1-93d1-4fd8-98a1-faf8faa915d5'
+          resourceGroupName: 'rg-ffs-prod'
           location: 'South Central US'
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
