@@ -36,6 +36,7 @@
             "tags": {
                 "Environment": "DEV2",
                 "Location": "South Central US"
+                "Owner": "Chandra Gullapalli"
             },
             "identity": {
                 "type": "SystemAssigned"
