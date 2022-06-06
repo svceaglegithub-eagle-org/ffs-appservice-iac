@@ -85,7 +85,7 @@ jobs:
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
           
-   - job: DeployonDev2
+  - job: DeployonDev2
     condition: and(succeeded(), eq(variables.isDev2, 'true'))
     pool: 
       name: VMJMPWA001Agent
