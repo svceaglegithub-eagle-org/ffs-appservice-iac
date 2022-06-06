@@ -25,6 +25,7 @@ parameters:
     values:
       - 'BuildandDeploy'
       - 'Development'
+      - 'DEV2'
       - 'QA'
       - 'UAT'
       - 'Production'
@@ -32,6 +33,7 @@ parameters:
 variables:
    isBuildandDeploy: ${{ eq(parameters.Environment, 'BuildandDeploy') }}
    isDev: ${{ eq(parameters.Environment, 'Development') }}
+   isDev2: ${{ eq(parameters.Environment, 'DEV2') }}
    isQA: ${{ eq(parameters.Environment, 'QA') }}
    isUAT: ${{ eq(parameters.Environment, 'UAT') }}
    isProd: ${{ eq(parameters.Environment, 'Production') }}
@@ -79,6 +81,29 @@ jobs:
           azureResourceManagerConnection: 'IMS Development'
           subscriptionId: 'd96bdf11-1497-4091-a786-ca95a185dcba'
           resourceGroupName: 'rg-ffs-dev-001'
+          location: 'South Central US'
+          csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
+          csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
+          
+   - job: DeployonDev2
+    condition: and(succeeded(), eq(variables.isDev2, 'true'))
+    pool: 
+      name: VMJMPWA001Agent
+      vmImage: VMJMPWA001
+    steps:
+      - task: CopyFiles@2
+        displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+        inputs:
+          SourceFolder: '$(System.DefaultWorkingDirectory)'
+          TargetFolder: '$(build.artifactstagingdirectory)'
+          CleanTargetFolder: true
+           
+      - task: AzureResourceManagerTemplateDeployment@3
+        displayName: 'ARM Template deployment: Resource Group scope'
+        inputs:
+          azureResourceManagerConnection: 'IMS Development'
+          subscriptionId: 'd96bdf11-1497-4091-a786-ca95a185dcba'
+          resourceGroupName: 'rg-ffs-dev-002'
           location: 'South Central US'
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
