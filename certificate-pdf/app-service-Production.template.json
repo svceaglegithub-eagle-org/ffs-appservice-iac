@@ -20,9 +20,6 @@
         "alwaysOn": {
             "type": "bool"
         },
-        "ftpsState": {
-            "type": "string"
-        },
         "hostingEnvironmentProfile": {
             "type": "object"
         },
@@ -30,7 +27,6 @@
             "type": "string"
         }
     },
-    "variables": {},
     "resources": [
         {
             "apiVersion": "2018-11-01",
@@ -40,8 +36,9 @@
             "tags": {
                 "Environment": "PROD",
                 "Location": "South Central US"
+                "Owner": "Chandra Gullapalli" 
             },
-			"identity": {
+	    "identity": {
                 "type": "SystemAssigned"
             },
             "dependsOn": [],
@@ -71,13 +68,10 @@
                                 }
                     ],
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
-                    "alwaysOn": "[parameters('alwaysOn')]",
-                    "ftpsState": "[parameters('ftpsState')]"
+                    "alwaysOn": "[parameters('alwaysOn')]"
                 },
                 "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
                 "clientAffinityEnabled": false,
-                "virtualNetworkSubnetId": null,
-                "httpsOnly": false,
                 "hostingEnvironmentProfile": "[parameters('hostingEnvironmentProfile')]"
             }
         }
