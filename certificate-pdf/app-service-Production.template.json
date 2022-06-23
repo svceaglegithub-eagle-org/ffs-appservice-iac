@@ -35,10 +35,10 @@
             "location": "[parameters('location')]",
             "tags": {
                 "Environment": "PROD",
-                "Location": "South Central US"
-                "Owner": "Chandra Gullapalli" 
+                "Location": "South Central US",
+                "Owner": "Chandra Gullapalli"
             },
-	    "identity": {
+            "identity": {
                 "type": "SystemAssigned"
             },
             "dependsOn": [],
@@ -53,7 +53,7 @@
                                 },
                                 {
                                     "name": "ASPNETCORE_ENVIRONMENT",
-                                    "value": "FREEDOM",
+                                    "value": "FREDD27",
                                     "slotSetting": false
                                 },
                                 {
