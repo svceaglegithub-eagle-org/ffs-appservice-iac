@@ -18,6 +18,7 @@ parameters:
       - 'workorder-service'
       - 'userapi-service'
       - 'vsr-service'
+      - 'func-b2c'
       
   - name: Environment
     type: string
