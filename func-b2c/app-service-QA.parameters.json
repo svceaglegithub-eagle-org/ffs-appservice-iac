@@ -1,1 +1,41 @@
-
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "02d0afb7-fc62-4bcf-8215-45a2391a7030"
+        },
+        "name": {
+            "value": "func-b2c-qa-001"
+        },
+        "location": {
+            "value": "southcentralus"
+        },
+        "hostingPlanName": {
+            "value": "asp-ims-qa"
+        },
+        "serverFarmResourceGroup": {
+            "value": "rg-core-uat"
+        },
+        "alwaysOn": {
+            "value": true
+        },
+        "ftpsState": {
+            "value": "FtpsOnly"
+        },
+        "storageAccountName": {
+            "value": "stfuncffsuat001"
+        },
+        "hostingEnvironmentProfile": {
+            "value": {
+                "id": "/subscriptions/02d0afb7-fc62-4bcf-8215-45a2391a7030/resourceGroups/rg-core-uat/providers/Microsoft.Web/hostingEnvironments/ase-ims-qa"
+            }
+        },
+        "use32BitWorkerProcess": {
+            "value": false
+        },
+        "linuxFxVersion": {
+            "value": "Node|16"
+        }
+    }
+}
