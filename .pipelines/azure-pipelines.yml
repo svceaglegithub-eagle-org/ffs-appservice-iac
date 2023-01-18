@@ -19,6 +19,7 @@ parameters:
       - 'userapi-service'
       - 'vsr-service'
       - 'func-b2c'
+      - 'func-hkmd'
       
   - name: Environment
     type: string
