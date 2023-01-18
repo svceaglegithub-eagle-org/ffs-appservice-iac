@@ -55,12 +55,8 @@
                 "siteConfig": {
                     "appSettings": [
                         {
-                            "name": "absenv",
-                            "value": "{   \"3771daa9-a0b9-4dfd-a468-145e8e7523e5\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"c8dmt088qrbeguv647gmtt86e7vn835scr8pat4s\"   },    \"24c526f1-904b-44a9-99fb-6765dabe2608\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   },    \"b49f7283-1137-4f6e-947c-f2897aad9e6f\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"c8dmt088qrbeguv647gmtt86e7vn835scr8pat4s\"   },    \"c186fbec-87c6-4467-aa39-062f967aa768\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   }  }"
-                        },
-                        {
-                            "name": "absenv_default",
-                            "value": "24c526f1-904b-44a9-99fb-6765dabe2608"
+                            "name": "AzureWebJobs.downloadVesselDataTimer.Disabled",
+                            "value": "0"
                         },
                         {
                             "name": "FUNCTIONS_EXTENSION_VERSION",
