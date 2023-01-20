@@ -56,11 +56,9 @@
 			{
 			        "name": "AppConfig",
    				"value": "Endpoint=https://dev-apis-app-config.azconfig.io;Id=YJsa-l5-s0:blkXV8tVbMaKuMts/eZI;Secret=Wm/OQCX6vuMGewsV0lkt2a8wkQ+woCPU6C79OLplgm8=",
-  				"type": "Custom",
 			    	"slotSetting": false
 			}
-		    ],      
-	
+		    ],
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
                     "alwaysOn": "[parameters('alwaysOn')]"
                 },
