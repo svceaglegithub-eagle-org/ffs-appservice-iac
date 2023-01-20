@@ -12,7 +12,7 @@
             "value": "southcentralus"
         },
         "hostingPlanName": {
-            "value": "asp-core-ims-dev"
+            "value": "asp-dev-linux-002"
         },
         "serverFarmResourceGroup": {
             "value": "rg-core-dev"
@@ -22,7 +22,7 @@
         },
         "hostingEnvironmentProfile": {
             "value": {
-                "id": "/subscriptions/d96bdf11-1497-4091-a786-ca95a185dcba/resourceGroups/rg-core-dev/providers/Microsoft.Web/hostingEnvironments/ase-core-ims-dev"
+                "id": "/subscriptions/d96bdf11-1497-4091-a786-ca95a185dcba/resourceGroups/rg-core-dev/providers/Microsoft.Web/hostingEnvironments/ase-ims-dev"
             }
         },
         "linuxFxVersion": {
