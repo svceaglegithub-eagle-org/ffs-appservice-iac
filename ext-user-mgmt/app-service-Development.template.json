@@ -52,10 +52,12 @@
                         }
                     ],
 	            "connectionStrings": [
+			{
 			        "name": "AppConfig",
    				"value": "Endpoint=https://dev-apis-app-config.azconfig.io",
   				"type": "Custom",
 			    	"slotSetting": false
+			}
 		    ],      
 	
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
