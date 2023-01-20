@@ -47,16 +47,17 @@
                     "appSettings": [
                         { 
 	                        "name": "ASPNETCORE_ENVIRONMENT", 
-	                        "value": "FREDD16", 
+	                        "value": "FREDD18", 
                             	"slotSetting": false 
-                        },
-			{
-			    	"name": "APPCONFIG_ENDPOINT",
-			    	"value": "https://dev-apis-app-config.azconfig.io",
-  				"slotSetting": false
-			}
-                    
+                        }
                     ],
+	            "connectionStrings": [
+			        "name": "AppConfig",
+   				"value": "Endpoint=https://dev-apis-app-config.azconfig.io",
+  				"type": "Custom",
+			    	"slotSetting": false
+		    ],      
+	
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
                     "alwaysOn": "[parameters('alwaysOn')]"
                 },
