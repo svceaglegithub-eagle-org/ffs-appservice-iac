@@ -48,7 +48,7 @@
                     "appSettings": [
                         { 
 	                        "name": "ASPNETCORE_ENVIRONMENT", 
-	                        "value": "FREDD18", 
+	                        "value": "FREDD18_EUM", 
                             	"slotSetting": false 
                         }
                     ],
