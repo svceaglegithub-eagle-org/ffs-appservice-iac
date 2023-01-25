@@ -35,7 +35,7 @@
             "value": false
         },
         "linuxFxVersion": {
-            "value": "Node|16"
+            "value": "Python|3.9"
         }
     }
 }
