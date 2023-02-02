@@ -36,6 +36,7 @@
             "tags": {
                 "Environment": "QA",
                 "Location": "South Central US"
+                "Builder": "Sunil Koirala"
             },
             "identity": {
                 "type": "SystemAssigned"
@@ -46,36 +47,19 @@
                 "siteConfig": {
                     "appSettings": [
                                 {
-                                    "name": "APPCONFIG_ENDPOINT",
-                                    "value": "https://app-cfg-uat-01.azconfig.io",
-                                    "slotSetting": false
-                                },
-                                {
-                                    "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-                                    "value": "a6efd83b-8e53-4989-87ad-6f66a228a78f",
-                                    "slotSetting": false
-                                },
-                                {
-                                    "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
-                                    "value": "InstrumentationKey=a6efd83b-8e53-4989-87ad-6f66a228a78f;IngestionEndpoint=https://southcentralus-3.in.applicationinsights.azure.com/",
-                                    "slotSetting": false
-                                },
-                                {
                                     "name": "ASPNETCORE_ENVIRONMENT",
-                                    "value": "FREDINT2",
-                                    "slotSetting": false
-                                },
-                                {
-                                    "name": "WEBSITE_RUN_FROM_PACKAGE",
-                                    "value": "1",
-                                    "slotSetting": false
-                                },
-                                {
-                                    "name": "WEBSITE_VNET_ROUTE_ALL",
-                                    "value": "1",
+                                    "value": "FREDINT2_EUM",
                                     "slotSetting": false
                                 }
                     ],
+                    "connectionStrings": [
+			                    {
+			                        "name": "AppConfig",
+   				                    "value": "Endpoint=https://app-cfg-uat-01.azconfig.io;Id=PGDz-l5-s0:0WZ6JL/XWTN5RpFB538O;Secret=oVdkseWDNjYbPBlrvVGvNTE3Jdq4a/oNUShR2Tby9Pw=",
+  				                    "type": "Custom",
+			    	                "slotSetting": false
+			                    }
+		            ],
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
                     "alwaysOn": "[parameters('alwaysOn')]"
                 },
