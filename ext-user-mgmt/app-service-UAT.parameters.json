@@ -6,7 +6,7 @@
             "value": "02d0afb7-fc62-4bcf-8215-45a2391a7030"
         },
         "name": {
-            "value": "certificate-pdf"
+            "value": "ext-user-mgmt"
         },
         "location": {
             "value": "southcentralus"
@@ -26,7 +26,7 @@
             }
         },
         "linuxFxVersion": {
-            "value": "DOTNETCORE|5.0"
+            "value": "DOTNETCORE|3.0"
         }
     }
 }
