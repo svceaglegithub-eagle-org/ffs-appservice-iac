@@ -35,7 +35,7 @@
             "location": "[parameters('location')]",
             "tags": {
                 "Environment": "UAT",
-                "Location": "South Central US"
+                "Location": "South Central US",
                 "Builder": "Sunil Koirala"
             },
             "identity": {
