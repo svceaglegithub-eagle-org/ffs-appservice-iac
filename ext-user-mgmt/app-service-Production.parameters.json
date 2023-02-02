@@ -6,7 +6,7 @@
             "value": "1e9801a1-93d1-4fd8-98a1-faf8faa915d5"
         },
         "name": {
-            "value": "vessel-service"
+            "value": "ext-user-mgmt"
         },
         "location": {
             "value": "southcentralus"
@@ -20,16 +20,13 @@
         "alwaysOn": {
             "value": true
         },
-        "ftpsState": {
-            "value": "AllAllowed"
-        },
         "hostingEnvironmentProfile": {
             "value": {
                 "id": "/subscriptions/1e9801a1-93d1-4fd8-98a1-faf8faa915d5/resourceGroups/rg-core-prod/providers/Microsoft.Web/hostingEnvironments/ase-ims-prod"
             }
         },
         "linuxFxVersion": {
-            "value": "NODE|16-lts"
+            "value": "DOTNETCORE|3.0"
         }
     }
 }
