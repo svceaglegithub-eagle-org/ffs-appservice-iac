@@ -48,7 +48,7 @@
                     "appSettings": [
                                 {
                                     "name": "ASPNETCORE_ENVIRONMENT",
-                                    "value": "FREDUAT_EUM",
+                                    "value": "FREDUAT_B2C",
                                     "slotSetting": false
                                 }
                     ],
