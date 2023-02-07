@@ -3,19 +3,19 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "subscriptionId": {
-            "value": "02d0afb7-fc62-4bcf-8215-45a2391a7030"
+            "value": "1e9801a1-93d1-4fd8-98a1-faf8faa915d5"
         },
         "name": {
-            "value": "func-b2c-uat-001"
+            "value": "func-b2c-prod-001"
         },
         "location": {
             "value": "southcentralus"
         },
         "hostingPlanName": {
-            "value": "asp-ims-uat-ext"
+            "value": "asp-ims-prod-linux-ext"
         },
         "serverFarmResourceGroup": {
-            "value": "rg-core-uat"
+            "value": "rg-core-prod"
         },
         "alwaysOn": {
             "value": true
@@ -24,11 +24,11 @@
             "value": "FtpsOnly"
         },
         "storageAccountName": {
-            "value": "stfuncffsuat001"
+            "value": "stfuncffsprod001"
         },
         "hostingEnvironmentProfile": {
             "value": {
-                "id": "/subscriptions/02d0afb7-fc62-4bcf-8215-45a2391a7030/resourceGroups/rg-core-uat/providers/Microsoft.Web/hostingEnvironments/ase-ims-uat"
+                "id": "/subscriptions/1e9801a1-93d1-4fd8-98a1-faf8faa915d5/resourceGroups/rg-core-prod/providers/Microsoft.Web/hostingEnvironments/ase-ims-prod"
             }
         },
         "use32BitWorkerProcess": {
