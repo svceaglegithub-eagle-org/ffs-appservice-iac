@@ -48,7 +48,7 @@
                     "appSettings": [
                                 {
                                     "name": "ASPNETCORE_ENVIRONMENT",
-                                    "value": "FREEDOM_EUM",
+                                    "value": "FREEDOM_B2C",
                                     "slotSetting": false
                                 }
                     ],
