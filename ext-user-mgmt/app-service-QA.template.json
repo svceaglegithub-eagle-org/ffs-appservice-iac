@@ -48,7 +48,7 @@
                     "appSettings": [
                                 {
                                     "name": "ASPNETCORE_ENVIRONMENT",
-                                    "value": "FREDINT2_EUM",
+                                    "value": "FREDSUP2_B2C",
                                     "slotSetting": false
                                 }
                     ],
