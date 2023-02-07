@@ -56,11 +56,11 @@
                     "appSettings": [
                         {
                             "name": "absenv",
-                            "value": "{   \"3771daa9-a0b9-4dfd-a468-145e8e7523e5\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"c8dmt088qrbeguv647gmtt86e7vn835scr8pat4s\"   },    \"24c526f1-904b-44a9-99fb-6765dabe2608\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   },    \"b49f7283-1137-4f6e-947c-f2897aad9e6f\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"c8dmt088qrbeguv647gmtt86e7vn835scr8pat4s\"   },    \"c186fbec-87c6-4467-aa39-062f967aa768\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   }  }"
+                            "value": "{   \"9f9e5508-57c2-4cda-aae6-00709bbef039\": {     \"maximoEndpoint\": \"https://fredsup2.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"dsucu6rffup1jmfjiv9gnebsjkfit519tm8fkqa5\"   },    \"ef442e93-dafc-43fb-b156-37f89d7c8d5a\": {     \"maximoEndpoint\": \"https://fredsup2.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",    \"apikey\": \"dsucu6rffup1jmfjiv9gnebsjkfit519tm8fkqa5\"   }, \"9f9e5508-57c2-4cda-aae6-00709bbef039\": {     \"maximoEndpoint\": \"https://freduat.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"2gajv2cmtn7ohnqacoa48fohb8f5kogt2bjcqs1f\"   },    \"ef442e93-dafc-43fb-b156-37f89d7c8d5a\": {     \"maximoEndpoint\": \"https://freduat.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"2gajv2cmtn7ohnqacoa48fohb8f5kogt2bjcqs1f\"   }  }"
                         },
                         {
                             "name": "absenv_default",
-                            "value": "24c526f1-904b-44a9-99fb-6765dabe2608"
+                            "value": "9f9e5508-57c2-4cda-aae6-00709bbef039"
                         },
                         {
                             "name": "FUNCTIONS_EXTENSION_VERSION",
