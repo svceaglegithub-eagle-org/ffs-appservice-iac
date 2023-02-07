@@ -12,7 +12,7 @@
             "value": "southcentralus"
         },
         "hostingPlanName": {
-            "value": "asp-ims-uat"
+            "value": "asp-ims-uat-ext"
         },
         "serverFarmResourceGroup": {
             "value": "rg-core-uat"
