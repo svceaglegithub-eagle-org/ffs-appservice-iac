@@ -1,0 +1,112 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "hostingPlanName": {
+            "type": "string"
+        },
+        "serverFarmResourceGroup": {
+            "type": "string"
+        },
+        "alwaysOn": {
+            "type": "bool"
+        },
+        "use32BitWorkerProcess": {
+            "type": "bool"
+        },
+        "ftpsState": {
+            "type": "string"
+        },
+        "storageAccountName": {
+            "type": "string"
+        },
+        "hostingEnvironmentProfile": {
+            "type": "object"
+        },
+        "linuxFxVersion": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2018-11-01",
+            "name": "[parameters('name')]",
+            "type": "Microsoft.Web/sites",
+            "kind": "functionapp,linux",
+            "location": "[parameters('location')]",
+            "tags": {
+                "Builder": "Sunil Koirala"
+            },
+            "dependsOn": [
+                "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]"
+            ],
+            "properties": {
+                "name": "[parameters('name')]",
+                "siteConfig": {
+                    "appSettings": [
+                        {
+                            "name": "absenv",
+                            "value": "{   \"3771daa9-a0b9-4dfd-a468-145e8e7523e5\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"c8dmt088qrbeguv647gmtt86e7vn835scr8pat4s\"   },    \"24c526f1-904b-44a9-99fb-6765dabe2608\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   },    \"b49f7283-1137-4f6e-947c-f2897aad9e6f\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"c8dmt088qrbeguv647gmtt86e7vn835scr8pat4s\"   },    \"c186fbec-87c6-4467-aa39-062f967aa768\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   }  }"
+                        },
+                        {
+                            "name": "absenv_default",
+                            "value": "24c526f1-904b-44a9-99fb-6765dabe2608"
+                        },
+                        {
+                            "name": "FUNCTIONS_EXTENSION_VERSION",
+                            "value": "~4"
+                        },
+                        {
+                            "name": "FUNCTIONS_WORKER_RUNTIME",
+                            "value": "node"
+                        },
+                        {
+                            "name": "AzureWebJobsStorage",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+                        }
+                    ],
+                    "cors": {
+                        "allowedOrigins": [
+                            "https://portal.azure.com"
+                        ]
+                    },
+                    "use32BitWorkerProcess": "[parameters('use32BitWorkerProcess')]",
+                    "ftpsState": "[parameters('ftpsState')]",
+                    "linuxFxVersion": "[parameters('linuxFxVersion')]",
+                    "alwaysOn": "[parameters('alwaysOn')]"
+                },
+                "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
+                "clientAffinityEnabled": false,
+                "virtualNetworkSubnetId": null,
+                "httpsOnly": true,
+                "hostingEnvironmentProfile": "[parameters('hostingEnvironmentProfile')]"
+            }
+        },
+        {
+            "apiVersion": "2019-06-01",
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[parameters('storageAccountName')]",
+            "location": "[parameters('location')]",
+            "tags": {
+                "Builder": "Sunil Koirala"
+            },
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "properties": {
+                "supportsHttpsTrafficOnly": true,
+                "minimumTlsVersion": "TLS1_2"
+            }
+        }
+    ]
+}
