@@ -53,8 +53,8 @@
             "properties": {
                 "name": "[parameters('name')]",
                 "siteConfig": {
-                    "appSettings": [
-                      {
+                "appSettings": [
+                        {
                             "name": "AzureWebJobs.downloadVesselDataTimer.Disabled",
                             "value": "0"
                         },
@@ -69,6 +69,58 @@
                         {
                             "name": "AzureWebJobsStorage",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+                        },
+                        {
+                            "name": "ApiBaseUrl",
+                            "value": "https://apim.eagle.org/customer/fleet-status/rec75/v3/"
+                        },
+                        {
+                            "name": "BUILD_FLAGS",
+                            "value": "UseExpressBuild"
+                        },
+                        {
+                            "name": "ClientId",
+                            "value": "54187c56-fba3-4f75-ba2d-9a1423a3286c"
+                        },
+                        {
+                            "name": "ENABLE_ORYX_BUILD",
+                            "value": "true"
+                        },
+                        {
+                            "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+                            "value": "1"
+                        },
+                        {
+                            "name": "SubscriptionId",
+                            "value": "91399246189442e8b432ad3f64f67f57"
+                        },
+                        {
+                            "name": "TokenEndpoint",
+                            "value": "https://ABSAuthProd.b2clogin.com/ABSAuthProd.onmicrosoft.com/B2C_1A_signup_signin_ROPC/oauth2/v2.0/token"
+                        },
+                        {
+                            "name": "UploadUrl",
+                            "value": "https://roecert-test.mardep.gov.hk/RO/webservice/generalDataRev3Service"
+                        },
+                        {
+                            "name": "UserId",
+                            "value": "hongkongflag"
+                        },
+                        {
+                            "name": "WEBSITE_ENABLE_SYNC_UPDATE_SITE",
+                            "value": "true"
+                        },
+                        {
+                            "name": "ContainerName",
+                            "value": "HKMDFuncVessels"
+                        },
+                        {
+                            "name": "downloadvesseldata_STORAGE",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+                        },
+                        {
+                            "name": "Password",
+                            "value": "https://kv-ffs-prod-01.vault.azure.net/secrets/hkmd-func-password/a6969449eafd47cbb9fa79545879e06a"
                         }
                     ],
                     "cors": {
