@@ -54,23 +54,86 @@
                 "name": "[parameters('name')]",
                 "siteConfig": {
                     "appSettings": [
-                        {
+                          {
+                            "name": "ApiBaseUrl",
+                            "value": "https://apidev.eagle.org/customer/fleet-status/rec75/v3/",
+                            "slotSetting": false
+                          },
+                          {
                             "name": "AzureWebJobs.downloadVesselDataTimer.Disabled",
-                            "value": "0"
-                        },
-                        {
+                            "value": "0",
+                            "slotSetting": false
+                          },
+                          {
+                              "name": "AzureWebJobsStorage",
+                              "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+                          },
+                          {
+                            "name": "ClientId",
+                            "value": "c46cbe81-3ea1-4d19-9b13-f11d87146ca4",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "ContainerName",
+                            "value": "FuncHKMDVessels",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "downloadvesseldata_STORAGE",
+                            "value": "DefaultEndpointsProtocol=https;AccountName=stfuncffsdev001;AccountKey=jlfzCwN3SdzUCXozPg/+FqxEW4Yp9hDkpelr980x/MKFw+Zl+FsKh7IXWr5STct/nfQqWJpKd0nP+ASti7fE5w==;EndpointSuffix=core.windows.net",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "ENABLE_ORYX_BUILD",
+                            "value": "true",
+                            "slotSetting": false
+                          },
+                          {
                             "name": "FUNCTIONS_EXTENSION_VERSION",
-                            "value": "~4"
-                        },
-                        {
+                            "value": "~4",
+                            "slotSetting": false
+                          },
+                          {
                             "name": "FUNCTIONS_WORKER_RUNTIME",
-                            "value": "python"
-                        },
-                        {
-                            "name": "AzureWebJobsStorage",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
-                        }
-                    ],
+                            "value": "python",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "Password",
+                            "value": "https://kv-ffs-dev-01.vault.azure.net/secrets/hkmd-func-password/c6cf3b201ff04e6091f6df130ae571f7",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+                            "value": "1",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "SubscriptionId",
+                            "value": "91399246189442e8b432ad3f64f67f57",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "TokenEndpoint",
+                            "value": "https://absauth.b2clogin.com/ABSAuth.onmicrosoft.com/B2C_1A_signup_signin_ROPC/oauth2/v2.0/token",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "UploadUrl",
+                            "value": "https://roecert-test.mardep.gov.hk/RO/webservice/generalDataRev3Service",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "UserId",
+                            "value": "hongkongflag",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "WEBSITE_VNET_ROUTE_ALL",
+                            "value": "1",
+                            "slotSetting": false
+                          }
+                        ]
                     "cors": {
                         "allowedOrigins": [
                             "https://portal.azure.com"
