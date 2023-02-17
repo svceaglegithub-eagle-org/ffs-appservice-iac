@@ -81,7 +81,23 @@
                         {
                             "name": "ClientId",
                             "value": "c46cbe81-3ea1-4d19-9b13-f11d87146ca4"
-                        }     
+                        },
+                        {
+                            "name": "ENABLE_ORYX_BUILD",
+                            "value": "true"
+                        },
+                        {
+                            "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+                            "value": "1"
+                        },
+                        {
+                            "name": "SubscriptionId",
+                            "value": "91399246189442e8b432ad3f64f67f57"
+                        },
+                        {
+                            "name": "TokenEndpoint",
+                            "value": "https://absauth.b2clogin.com/ABSAuth.onmicrosoft.com/B2C_1A_signup_signin_ROPC/oauth2/v2.0/token"
+                        }
                     ],
                     "cors": {
                         "allowedOrigins": [
