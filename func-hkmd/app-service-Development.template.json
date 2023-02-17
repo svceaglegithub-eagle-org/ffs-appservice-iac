@@ -97,7 +97,7 @@
                         {
                             "name": "TokenEndpoint",
                             "value": "https://absauth.b2clogin.com/ABSAuth.onmicrosoft.com/B2C_1A_signup_signin_ROPC/oauth2/v2.0/token"
-                        }
+                        },
                         {
                             "name": "UploadUrl",
                             "value": "https://roecert-test.mardep.gov.hk/RO/webservice/generalDataRev3Service"
