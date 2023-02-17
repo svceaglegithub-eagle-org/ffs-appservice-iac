@@ -69,6 +69,58 @@
                         {
                             "name": "AzureWebJobsStorage",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+                        },
+                        {
+                            "name": "ApiBaseUrl",
+                            "value": "https://apim-uat-001.eagle.org/customer/fleet-status/rec75/v3/"
+                        },
+                        {
+                            "name": "BUILD_FLAGS",
+                            "value": "UseExpressBuild"
+                        },
+                        {
+                            "name": "ClientId",
+                            "value": "74cf6631-6f41-4501-9d18-2695d390aca2"
+                        },
+                        {
+                            "name": "ENABLE_ORYX_BUILD",
+                            "value": "true"
+                        },
+                        {
+                            "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+                            "value": "1"
+                        },
+                        {
+                            "name": "SubscriptionId",
+                            "value": "91399246189442e8b432ad3f64f67f57"
+                        },
+                        {
+                            "name": "TokenEndpoint",
+                            "value": "https://ABSAuthUAT.b2clogin.com/ABSAuthUAT.onmicrosoft.com/B2C_1A_signup_signin_ROPC/oauth2/v2.0/token"
+                        },
+                        {
+                            "name": "UploadUrl",
+                            "value": "https://roecert-test.mardep.gov.hk/RO/webservice/generalDataRev3Service"
+                        },
+                        {
+                            "name": "UserId",
+                            "value": "hongkongflag"
+                        },
+                        {
+                            "name": "WEBSITE_ENABLE_SYNC_UPDATE_SITE",
+                            "value": "true"
+                        },
+                        {
+                            "name": "ContainerName",
+                            "value": "HKMDFuncVessels"
+                        },
+                        {
+                            "name": "downloadvesseldata_STORAGE",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+                        },
+                        {
+                            "name": "Password",
+                            "value": "https://kv-ffs-uat-01.vault.azure.net/secrets/hkmd-func-password/79774dc61a5c40a8b62a7a42dfe30be4"
                         }
                     ],
                     "cors": {
