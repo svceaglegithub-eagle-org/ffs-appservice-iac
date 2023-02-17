@@ -120,7 +120,7 @@
                         },
                         {
                             "name": "Password",
-                            "value": "abc12345"
+                            "value": "https://kv-ffs-dev-01.vault.azure.net/secrets/hkmd-func-password/c6cf3b201ff04e6091f6df130ae571f7"
                         }
                     ],
                     "cors": {
