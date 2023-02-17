@@ -54,87 +54,113 @@
                 "name": "[parameters('name')]",
                 "siteConfig": {
                     "appSettings": [
-                          {
-                            "name": "ApiBaseUrl",
-                            "value": "https://apidev.eagle.org/customer/fleet-status/rec75/v3/",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "AzureWebJobs.downloadVesselDataTimer.Disabled",
-                            "value": "0",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "AzureWebJobsStorage",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "ClientId",
-                            "value": "c46cbe81-3ea1-4d19-9b13-f11d87146ca4",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "ContainerName",
-                            "value": "FuncHKMDVessels",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "downloadvesseldata_STORAGE",
-                            "value": "DefaultEndpointsProtocol=https;AccountName=stfuncffsdev001;AccountKey=jlfzCwN3SdzUCXozPg/+FqxEW4Yp9hDkpelr980x/MKFw+Zl+FsKh7IXWr5STct/nfQqWJpKd0nP+ASti7fE5w==;EndpointSuffix=core.windows.net",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "ENABLE_ORYX_BUILD",
-                            "value": "true",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "FUNCTIONS_EXTENSION_VERSION",
-                            "value": "~4",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "FUNCTIONS_WORKER_RUNTIME",
-                            "value": "python",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "Password",
-                            "value": "https://kv-ffs-dev-01.vault.azure.net/secrets/hkmd-func-password/c6cf3b201ff04e6091f6df130ae571f7",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
-                            "value": "1",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "SubscriptionId",
-                            "value": "91399246189442e8b432ad3f64f67f57",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "TokenEndpoint",
-                            "value": "https://absauth.b2clogin.com/ABSAuth.onmicrosoft.com/B2C_1A_signup_signin_ROPC/oauth2/v2.0/token",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "UploadUrl",
-                            "value": "https://roecert-test.mardep.gov.hk/RO/webservice/generalDataRev3Service",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "UserId",
-                            "value": "hongkongflag",
-                            "slotSetting": false
-                          },
-                          {
-                            "name": "WEBSITE_VNET_ROUTE_ALL",
-                            "value": "1",
-                            "slotSetting": false
-                          }
-                        ]
+  {
+    "name": "ApiBaseUrl",
+    "value": "https://apidev.eagle.org/customer/fleet-status/rec75/v3/",
+    "slotSetting": false
+  },
+  {
+    "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+    "value": "f45726c2-ab94-42d4-9c9f-8b4086711bbe",
+    "slotSetting": true
+  },
+  {
+    "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+    "value": "InstrumentationKey=f45726c2-ab94-42d4-9c9f-8b4086711bbe;IngestionEndpoint=https://southcentralus-3.in.applicationinsights.azure.com/;LiveEndpoint=https://southcentralus.livediagnostics.monitor.azure.com/",
+    "slotSetting": false
+  },
+  {
+    "name": "AzureWebJobs.downloadVesselDataTimer.Disabled",
+    "value": "0",
+    "slotSetting": false
+  },
+  {
+    "name": "AzureWebJobsStorage",
+    "value": "DefaultEndpointsProtocol=https;AccountName=stfuncffsdev001;AccountKey=jlfzCwN3SdzUCXozPg/+FqxEW4Yp9hDkpelr980x/MKFw+Zl+FsKh7IXWr5STct/nfQqWJpKd0nP+ASti7fE5w==;EndpointSuffix=core.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "BUILD_FLAGS",
+    "value": "UseExpressBuild",
+    "slotSetting": false
+  },
+  {
+    "name": "ClientId",
+    "value": "c46cbe81-3ea1-4d19-9b13-f11d87146ca4",
+    "slotSetting": false
+  },
+  {
+    "name": "ContainerName",
+    "value": "vessels",
+    "slotSetting": false
+  },
+  {
+    "name": "downloadvesseldata_STORAGE",
+    "value": "DefaultEndpointsProtocol=https;AccountName=downloadvesseldataimsdev;AccountKey=yfcaL5fQ34mnSjJmRB4XPhLffTGbMQZUvyVd5uhbnWy1Nfk0/n3y8njDlAd97XJBwV1DlkSTVDdm+AStBFHyng==;EndpointSuffix=core.windows.net",
+    "slotSetting": false
+  },
+  {
+    "name": "ENABLE_ORYX_BUILD",
+    "value": "true",
+    "slotSetting": false
+  },
+  {
+    "name": "FUNCTIONS_EXTENSION_VERSION",
+    "value": "~4",
+    "slotSetting": false
+  },
+  {
+    "name": "FUNCTIONS_WORKER_RUNTIME",
+    "value": "python",
+    "slotSetting": false
+  },
+  {
+    "name": "Password",
+    "value": "abc12345",
+    "slotSetting": false
+  },
+  {
+    "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+    "value": "1",
+    "slotSetting": false
+  },
+  {
+    "name": "SubscriptionId",
+    "value": "91399246189442e8b432ad3f64f67f57",
+    "slotSetting": false
+  },
+  {
+    "name": "TokenEndpoint",
+    "value": "https://absauth.b2clogin.com/ABSAuth.onmicrosoft.com/B2C_1A_signup_signin_ROPC/oauth2/v2.0/token",
+    "slotSetting": false
+  },
+  {
+    "name": "UploadUrl",
+    "value": "https://roecert-test.mardep.gov.hk/RO/webservice/generalDataRev3Service",
+    "slotSetting": false
+  },
+  {
+    "name": "UserId",
+    "value": "hongkongflag",
+    "slotSetting": false
+  },
+  {
+    "name": "WEBSITE_ENABLE_SYNC_UPDATE_SITE",
+    "value": "true",
+    "slotSetting": false
+  },
+  {
+    "name": "WEBSITE_VNET_ROUTE_ALL",
+    "value": "1",
+    "slotSetting": false
+  },
+  {
+    "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+    "value": "true",
+    "slotSetting": false
+  }
+]
+                    
                     "cors": {
                         "allowedOrigins": [
                             "https://portal.azure.com"
