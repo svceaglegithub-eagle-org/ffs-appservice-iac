@@ -109,6 +109,18 @@
                         {
                             "name": "WEBSITE_ENABLE_SYNC_UPDATE_SITE",
                             "value": "true"
+                        },
+                        {
+                            "name": "ContainerName",
+                            "value": "HKMDFuncVessels"
+                        },
+                        {
+                            "name": "downloadvesseldata_STORAGE",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
+                        },
+                        {
+                            "name": "Password",
+                            "value": "abc12345"
                         }
                     ],
                     "cors": {
