@@ -18,6 +18,7 @@ parameters:
       - 'workorder-service'
       - 'userapi-service'
       - 'vsr-service'
+      - 'b2c-cac-service'
       - 'func-b2c'
       - 'func-hkmd'
       
