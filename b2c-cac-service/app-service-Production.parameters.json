@@ -1,0 +1,32 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "1e9801a1-93d1-4fd8-98a1-faf8faa915d5"
+        },
+        "name": {
+            "value": "ext-user-mgmt"
+        },
+        "location": {
+            "value": "southcentralus"
+        },
+        "hostingPlanName": {
+            "value": "asp-ims-prod-linux"
+        },
+        "serverFarmResourceGroup": {
+            "value": "rg-core-prod"
+        },
+        "alwaysOn": {
+            "value": true
+        },
+        "hostingEnvironmentProfile": {
+            "value": {
+                "id": "/subscriptions/1e9801a1-93d1-4fd8-98a1-faf8faa915d5/resourceGroups/rg-core-prod/providers/Microsoft.Web/hostingEnvironments/ase-ims-prod"
+            }
+        },
+        "linuxFxVersion": {
+            "value": "DOTNETCORE|3.0"
+        }
+    }
+}
