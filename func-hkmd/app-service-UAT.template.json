@@ -113,46 +113,6 @@
                         {
                             "name": "downloadvesseldata_STORAGE",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
-                        },
-                        {
-                            "name": "CertContainerName",
-                            "value": "hkmdcerts"
-                        },
-                        {
-                            "name": "ClientSecret",
-                            "value": "@Microsoft.KeyVault(SecretUri=https://kv-ffs-uat-01.vault.azure.net/secrets/hkmd-client-secret/bcbaf0236cbf4ad1ac5cd31842be2851)"
-                        },
-                        {
-                            "name": "CrtFileName",
-                            "value": "abs.crt"
-                        },
-                        {
-                            "name": "ImpersonateUser",
-                            "value": "hongkongflag"
-                        },
-                        {
-                            "name": "KeyFileName",
-                            "value": "abs.key"
-                        },
-                        {
-                            "name": "PemFileName",
-                            "value": "hkmd_all_ca_certs.pem"
-                        },
-                        {
-                            "name": "RoP",
-                            "value": "JZSC8W3U"
-                        },
-                        {
-                            "name": "RoU",
-                            "value": "ABS_TEST"
-                        },
-                        {
-                            "name": "Scope",
-                            "value": "api://2cf1d820-9cb1-49ef-95ad-0a999d0cc0b3/.default"
-                        },
-                        {
-                            "name": "TokenEndpoint",
-                            "value": "https://login.microsoftonline.com/d810b06c-d004-4d52-b0aa-4f3581ee7020/oauth2/v2.0/token"
                         }
                     ],
                     "cors": {
