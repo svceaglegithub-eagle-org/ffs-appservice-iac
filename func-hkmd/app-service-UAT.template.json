@@ -149,10 +149,6 @@
                         {
                             "name": "Scope",
                             "value": "api://2cf1d820-9cb1-49ef-95ad-0a999d0cc0b3/.default"
-                        },
-                        {
-                            "name": "TokenEndpoint",
-                            "value": "https://login.microsoftonline.com/d810b06c-d004-4d52-b0aa-4f3581ee7020/oauth2/v2.0/token"
                         }
                     ],
                     "cors": {
