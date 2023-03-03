@@ -121,7 +121,19 @@
                         {
                             "name": "ClientSecret",
                             "value": "@Microsoft.KeyVault(SecretUri=https://kv-ffs-uat-01.vault.azure.net/secrets/hkmd-client-secret/bcbaf0236cbf4ad1ac5cd31842be2851)"
-                        }
+                        },
+                        {
+                            "name": "CrtFileName",
+                            "value": "abs.crt"
+                        },
+                        {
+                            "name": "ImpersonateUser",
+                            "value": "hongkongflag"
+                        },
+                        {
+                            "name": "KeyFileName",
+                            "value": "abs.key"
+                        }                     
                     ],
                     "cors": {
                         "allowedOrigins": [
