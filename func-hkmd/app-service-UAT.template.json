@@ -120,7 +120,7 @@
                         },
                         {
                             "name": "ClientSecret",
-                            "value": "@Microsoft.KeyVault(SecretUri=https://kv-ffs-uat-01.vault.azure.net/secrets/hkmd-client-secret/bcbaf0236cbf4ad1ac5cd31842be2851)"
+                            "value": "@Microsoft.KeyVault(SecretUri=https://kv-ffs-uat-01.vault.azure.net/secrets/hkmd-client-secret/32f2c89d4d3b43a4a3b891e3fe6d6129)"
                         },
                         {
                             "name": "CrtFileName",
