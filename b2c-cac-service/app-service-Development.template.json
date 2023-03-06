@@ -43,7 +43,11 @@
             "name": "[parameters('name')]",
             "type": "Microsoft.Web/sites",
             "location": "[parameters('location')]",
-            "tags": null,
+            "tags": {
+                "Environment": "DEV",
+                "Location": "South Central US",
+		"Builder": "Sunil Koirala"
+            },
             "dependsOn": [],
 			"identity": {
 				"type": "SystemAssigned"
