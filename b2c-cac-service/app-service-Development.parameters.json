@@ -6,13 +6,13 @@
             "value": "d96bdf11-1497-4091-a786-ca95a185dcba"
         },
         "name": {
-            "value": "b2c-cac-service"
+            "value": "b2c-cac-service1"
         },
         "location": {
             "value": "southcentralus"
         },
         "hostingPlanName": {
-            "value": "asp-dev-linux-002"
+            "value": "asp-dev-windows-001"
         },
         "serverFarmResourceGroup": {
             "value": "rg-core-dev"
@@ -28,8 +28,14 @@
                 "id": "/subscriptions/d96bdf11-1497-4091-a786-ca95a185dcba/resourceGroups/rg-core-dev/providers/Microsoft.Web/hostingEnvironments/ase-ims-dev"
             }
         },
-        "linuxFxVersion": {
-            "value": "DOTNETCORE|6.0"
+        "currentStack": {
+            "value": "dotnet"
+        },
+        "phpVersion": {
+            "value": "OFF"
+        },
+        "netFrameworkVersion": {
+            "value": "v6.0"
         }
     }
 }
