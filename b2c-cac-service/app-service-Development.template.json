@@ -42,6 +42,9 @@
                 "Enviornment ": "DEV"
             },
             "dependsOn": [],
+	        "identity": {
+                "type": "SystemAssigned"
+            },
             "properties": {
                 "name": "[parameters('name')]",
                 "siteConfig": {
