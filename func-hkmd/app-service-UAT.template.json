@@ -96,7 +96,7 @@
                         },
                         {
                             "name": "TokenEndpoint",
-                            "value": "https://ABSAuthUAT.b2clogin.com/ABSAuthUAT.onmicrosoft.com/B2C_1A_signup_signin_ROPC/oauth2/v2.0/token"
+                            "value": "https://login.microsoftonline.com/d810b06c-d004-4d52-b0aa-4f3581ee7020/oauth2/v2.0/token"
                         },
                         {
                             "name": "UploadUrl",
