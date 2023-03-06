@@ -26,13 +26,7 @@
         "hostingEnvironmentProfile": {
             "type": "object"
         },
-        "currentStack": {
-            "type": "string"
-        },
-        "phpVersion": {
-            "type": "string"
-        },
-        "netFrameworkVersion": {
+        "linuxFxVersion": {
             "type": "string"
         }
     },
@@ -49,14 +43,14 @@
 		"Builder": "Sunil Koirala"
             },
             "dependsOn": [],
-			"identity": {
-				"type": "SystemAssigned"
+	    "identity": {
+		"type": "SystemAssigned"
             },
             "properties": {
                 "name": "[parameters('name')]",
                 "siteConfig": {
                     "appSettings": [
-                        {
+			{
                             "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
                             "value": "9c5af167-c76a-4a04-8c22-c61f47e3d58b"
                         },
@@ -76,20 +70,13 @@
                             "name": "trustedRootCAUrl",
                             "value": "https://stabsb2ccacdev.blob.core.windows.net/caccertroot/certs.zip"
                         }
-                    ],
-                    "metadata": [
-                        {
-                            "name": "CURRENT_STACK",
-                            "value": "[parameters('currentStack')]"
-                        }
-                    ],
-                    "phpVersion": "[parameters('phpVersion')]",
-                    "netFrameworkVersion": "[parameters('netFrameworkVersion')]",
+		],
+                    "linuxFxVersion": "[parameters('linuxFxVersion')]",
                     "alwaysOn": "[parameters('alwaysOn')]",
                     "ftpsState": "[parameters('ftpsState')]"
                 },
                 "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
-                "clientAffinityEnabled": true,
+                "clientAffinityEnabled": false,
                 "virtualNetworkSubnetId": null,
                 "httpsOnly": true,
                 "hostingEnvironmentProfile": "[parameters('hostingEnvironmentProfile')]"
