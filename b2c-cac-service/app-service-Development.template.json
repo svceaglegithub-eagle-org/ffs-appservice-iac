@@ -45,7 +45,33 @@
             "properties": {
                 "name": "[parameters('name')]",
                 "siteConfig": {
-                    "appSettings": [],
+                    "appSettings": [
+                          {
+                            "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+                            "value": "9c5af167-c76a-4a04-8c22-c61f47e3d58b",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+                            "value": "InstrumentationKey=9c5af167-c76a-4a04-8c22-c61f47e3d58b;IngestionEndpoint=https://centralus-2.in.applicationinsights.azure.com/;LiveEndpoint=https://centralus.livediagnostics.monitor.azure.com/",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "ApplicationInsightsAgent_EXTENSION_VERSION",
+                            "value": "~3",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "tablestorageuri",
+                            "value": "https://stabsb2ccacdev.table.core.windows.net/Auths",
+                            "slotSetting": false
+                          },
+                          {
+                            "name": "trustedRootCAUrl",
+                            "value": "https://stabsb2ccacdev.blob.core.windows.net/caccertroot/certs.zip",
+                            "slotSetting": false
+                          }
+                    ],
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
                     "alwaysOn": "[parameters('alwaysOn')]",
                     "ftpsState": "[parameters('ftpsState')]"
