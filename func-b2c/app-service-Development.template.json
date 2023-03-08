@@ -54,14 +54,30 @@
                 "name": "[parameters('name')]",
                 "siteConfig": {
                     "appSettings": [
-                        {
-                            "name": "absenv",
-                            "value": "{   \"3771daa9-a0b9-4dfd-a468-145e8e7523e5\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"c8dmt088qrbeguv647gmtt86e7vn835scr8pat4s\"   },    \"24c526f1-904b-44a9-99fb-6765dabe2608\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   },    \"b49f7283-1137-4f6e-947c-f2897aad9e6f\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"c8dmt088qrbeguv647gmtt86e7vn835scr8pat4s\"   },    \"c186fbec-87c6-4467-aa39-062f967aa768\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   }  }"
-                        },
-                        {
+						{
+							"name": "absenv",
+							"value": "{   \"3771daa9-a0b9-4dfd-a468-145e8e7523e5\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"maximoEndpointForGetUsers\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_dropnulls=0&oslc.select=username\",     \"maximoEndpointForUpdateUsers\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1\",     \"maximoEndpointForGetUserDetails\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?&oslc.select=username,email,phone_number,orgtype,first_name,last_name,mobile_number&lean=1&ignorecollectionref=1\",     \"maximoEndpointForCreateUser\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_lang=en-EN\",     \"apikey\": \"2jbhbdcv5k5jq35ddi2vte9nbblnfbpghn4cals\"   },   \"24c526f1-904b-44a9-99fb-6765dabe2608\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"maximoEndpointForGetUsers\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_dropnulls=0&oslc.select=username\",     \"maximoEndpointForUpdateUsers\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1\",     \"maximoEndpointForGetUserDetails\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?&oslc.select=username,email,phone_number,orgtype,first_name,last_name,mobile_number&lean=1&ignorecollectionref=1\",     \"maximoEndpointForCreateUser\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_lang=en-EN\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   },   \"b49f7283-1137-4f6e-947c-f2897aad9e6f\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"maximoEndpointForGetUsers\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_dropnulls=0&oslc.select=username\",     \"maximoEndpointForUpdateUsers\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1\",     \"maximoEndpointForGetUserDetails\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?&oslc.select=username,email,phone_number,orgtype,first_name,last_name,mobile_number&lean=1&ignorecollectionref=1\",     \"maximoEndpointForCreateUser\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_lang=en-EN\",     \"apikey\": \"2jbhbdcv5k5jq35ddi2vte9nbblnfbpghn4cals\"   },   \"c186fbec-87c6-4467-aa39-062f967aa768\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"maximoEndpointForGetUsers\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_dropnulls=0&oslc.select=username\",     \"maximoEndpointForUpdateUsers\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1\",     \"maximoEndpointForGetUserDetails\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?&oslc.select=username,email,phone_number,orgtype,first_name,last_name,mobile_number&lean=1&ignorecollectionref=1\",     \"maximoEndpointForCreateUser\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_lang=en-EN\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   },   \"6d82d58d-a2c7-4630-8b17-a8cee739120d\": {     \"maximoEndpoint\": \"https://fredd24.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"maximoEndpointForGetUsers\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_dropnulls=0&oslc.select=username\",     \"maximoEndpointForUpdateUsers\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1\",     \"maximoEndpointForGetUserDetails\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?&oslc.select=username,email,phone_number,orgtype,first_name,last_name,mobile_number&lean=1&ignorecollectionref=1\",     \"maximoEndpointForCreateUser\": \"https://fredd24.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_lang=en-EN\",     \"apikey\": \"2jbhbdcv5k5jq35ddi2vte9nbblnfbpghn4cals\"   },   \"6d82d58d-a2c7-4630-8b17-a8cee739120d\": {     \"maximoEndpoint\": \"https://fredd18.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"maximoEndpointForGetUsers\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_dropnulls=0&oslc.select=username\",     \"maximoEndpointForUpdateUsers\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1\",     \"maximoEndpointForGetUserDetails\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?&oslc.select=username,email,phone_number,orgtype,first_name,last_name,mobile_number&lean=1&ignorecollectionref=1\",     \"maximoEndpointForCreateUser\": \"https://fredd18.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_lang=en-EN\",     \"apikey\": \"n57mgq91ejmpjp4lmcqut4qdql068vggov9rl1q4\"   } }",
+							"slotSetting": false
+						},
+						{
+							"name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+							"value": "f45726c2-ab94-42d4-9c9f-8b4086711bbe",
+							"slotSetting": true
+						},
+						{
+							"name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+							"value": "InstrumentationKey=f45726c2-ab94-42d4-9c9f-8b4086711bbe;IngestionEndpoint=https://southcentralus-3.in.applicationinsights.azure.com/;LiveEndpoint=https://southcentralus.livediagnostics.monitor.azure.com/",
+							"slotSetting": false
+						},
+						{
                             "name": "absenv_default",
                             "value": "24c526f1-904b-44a9-99fb-6765dabe2608"
                         },
+						{
+							"name": "getRolesApiTimeout",
+							"value": "30",
+							"slotSetting": false
+						},
                         {
                             "name": "FUNCTIONS_EXTENSION_VERSION",
                             "value": "~4"
@@ -70,6 +86,22 @@
                             "name": "FUNCTIONS_WORKER_RUNTIME",
                             "value": "node"
                         },
+						{
+							"name": "clientIdForGraphClient",
+							"value": "b4c2139c-d190-4684-bd0d-fb1c33514867"
+						},
+						{
+							"name": "clientSecretForGraphClient",
+							"value": "~eK8Q~edmt702xbyhhW7Nnqi~SGcBjUR5-oF1bXf"
+						},
+						{
+							"name": "tenantIdForGraphClient",
+							"value": "e0a8366e-5035-407e-86f2-f6492c9b8347"
+						},
+						{
+							"name": "TOKEN_SCOPE_GRAPH_API",
+							"value": "https://graph.microsoft.com/.default"
+						},
                         {
                             "name": "AzureWebJobsStorage",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
