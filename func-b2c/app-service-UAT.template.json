@@ -106,7 +106,7 @@
 							"name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
 							"value": "true"
 						}
-					]
+				],
                     "cors": {
                         "allowedOrigins": [
                             "https://portal.azure.com"
