@@ -53,28 +53,60 @@
             "properties": {
                 "name": "[parameters('name')]",
                 "siteConfig": {
-                    "appSettings": [
-                        {
-                            "name": "absenv",
-                            "value": "{   \"df694ded-413f-4f27-8646-04441d37be83\": {     \"maximoEndpoint\": \"https://freedom.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"ap65rje7vbtm2u4dlc122g7hsjv8licoqq5j9nis\"   }, \"d28885e5-6e88-441c-a019-df9fb4e649d3\": {     \"maximoEndpoint\": \"https://freedom.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",    \"apikey\": \"ap65rje7vbtm2u4dlc122g7hsjv8licoqq5j9nis\"   }, \"9f9e5508-57c2-4cda-aae6-00709bbef039\": {     \"maximoEndpoint\": \"https://freduat.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"2gajv2cmtn7ohnqacoa48fohb8f5kogt2bjcqs1f\"   }, \"ef442e93-dafc-43fb-b156-37f89d7c8d5a\": {     \"maximoEndpoint\": \"https://freduat.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"apikey\": \"2gajv2cmtn7ohnqacoa48fohb8f5kogt2bjcqs1f\"   }  }"
-                        },
-                        {
-                            "name": "absenv_default",
-                            "value": "df694ded-413f-4f27-8646-04441d37be83"
-                        },
-                        {
-                            "name": "FUNCTIONS_EXTENSION_VERSION",
-                            "value": "~4"
-                        },
-                        {
-                            "name": "FUNCTIONS_WORKER_RUNTIME",
-                            "value": "node"
-                        },
-                        {
-                            "name": "AzureWebJobsStorage",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
-                        }
-                    ],
+			    "appSettings": [
+						{
+							"name": "absenv",
+							"value": "{   \"df694ded-413f-4f27-8646-04441d37be83\": {     \"maximoEndpoint\": \"https://freedom.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"maximoEndpointForGetUsers\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_dropnulls=0&oslc.select=username\",     \"maximoEndpointForUpdateUsers\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1\",     \"maximoEndpointForGetUserDetails\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?&oslc.select=username,email,phone_number,orgtype,first_name,last_name,mobile_number&lean=1&ignorecollectionref=1\",     \"maximoEndpointForCreateUser\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_lang=en-EN\",     \"apikey\": \"ap65rje7vbtm2u4dlc122g7hsjv8licoqq5j9nis\"   },   \"d28885e5-6e88-441c-a019-df9fb4e649d3\": {     \"maximoEndpoint\": \"https://freedom.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"maximoEndpointForGetUsers\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_dropnulls=0&oslc.select=username\",     \"maximoEndpointForUpdateUsers\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1\",     \"maximoEndpointForGetUserDetails\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?&oslc.select=username,email,phone_number,orgtype,first_name,last_name,mobile_number&lean=1&ignorecollectionref=1\",     \"maximoEndpointForCreateUser\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_lang=en-EN\",     \"apikey\": \"ap65rje7vbtm2u4dlc122g7hsjv8licoqq5j9nis\"   },   \"c93b61f4-189f-444c-8e3b-e6ce0fb64a89\": {     \"maximoEndpoint\": \"https://freedom.eagle.org/maximo/api/script/ABSACMGETUSERPERM\",     \"maximoEndpointForGetUsers\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_dropnulls=0&oslc.select=username\",     \"maximoEndpointForUpdateUsers\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1\",     \"maximoEndpointForGetUserDetails\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?&oslc.select=username,email,phone_number,orgtype,first_name,last_name,mobile_number&lean=1&ignorecollectionref=1\",     \"maximoEndpointForCreateUser\": \"https://freedom.eagle.org/maximo/api/os/ABSAPIACMUSERPROFILE?lean=1&_lang=en-EN\",     \"apikey\": \"ap65rje7vbtm2u4dlc122g7hsjv8licoqq5j9nis\"   } }"
+						},
+						{
+							"name": "absenv_default",
+							"value": "df694ded-413f-4f27-8646-04441d37be83"
+						},
+						{
+							"name": "AzureWebJobsStorage",
+							"value": "DefaultEndpointsProtocol=https;AccountName=stfuncffsprod001;AccountKey=/jQITKtAeYcYoahwLZV5ykniIc+QypjJdsCqB5dLSkjXzcsWEmlA5Vnt88q8dJfEEloB3Q5ZfXrp+ASthWfrHA==;EndpointSuffix=core.windows.net"
+						},
+						{
+							"name": "getRolesApiTimeout",
+							"value": "30"
+						},
+						{
+							"name": "clientIdForGraphClient",
+							"value": "074b2ae8-e90b-49fe-ab3d-cd17cc0316de"
+						},
+						{
+							"name": "clientSecretForGraphClient",
+							"value": "3xzQvH6_?0xTFO1LFTkcUDvB-?7kXJgQ"
+						},
+						{
+							"name": "tenantIdForGraphClient",
+							"value": "21312ce9-4978-4254-8f16-84751c35b331"
+						},
+						{
+							"name": "TOKEN_SCOPE_GRAPH_API",
+							"value": "https://graph.microsoft.com/.default"
+						},	
+						{
+							"name": "FUNCTIONS_EXTENSION_VERSION",
+							"value": "~4"
+						},
+						{
+							"name": "FUNCTIONS_WORKER_RUNTIME",
+							"value": "node"
+						},
+						{
+							"name": "WEBSITE_ENABLE_SYNC_UPDATE_SITE",
+							"value": "true"
+						},
+						{
+							"name": "WEBSITE_VNET_ROUTE_ALL",
+							"value": "1"
+						},
+						{
+							"name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+							"value": "true"
+						}
+					],
                     "cors": {
                         "allowedOrigins": [
                             "https://portal.azure.com"
