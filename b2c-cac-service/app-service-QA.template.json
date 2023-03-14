@@ -20,6 +20,9 @@
         "alwaysOn": {
             "type": "bool"
         },
+        "ftpsState": {
+            "type": "string"
+        },
         "hostingEnvironmentProfile": {
             "type": "object"
         },
@@ -27,6 +30,7 @@
             "type": "string"
         }
     },
+    "variables": {},
     "resources": [
         {
             "apiVersion": "2018-11-01",
@@ -36,35 +40,45 @@
             "tags": {
                 "Environment": "QA",
                 "Location": "South Central US",
-                "Builder": "Sunil Koirala"
-            },
-            "identity": {
-                "type": "SystemAssigned"
+		"Builder": "Sunil Koirala"
             },
             "dependsOn": [],
+	    "identity": {
+		"type": "SystemAssigned"
+            },
             "properties": {
                 "name": "[parameters('name')]",
                 "siteConfig": {
                     "appSettings": [
-                                {
-                                    "name": "ASPNETCORE_ENVIRONMENT",
-                                    "value": "FREDSUP2_B2C",
-                                    "slotSetting": false
-                                }
-                    ],
-                    "connectionStrings": [
-			                    {
-			                        "name": "AppConfig",
-   				                    "value": "Endpoint=https://app-cfg-uat-01.azconfig.io;Id=PGDz-l5-s0:0WZ6JL/XWTN5RpFB538O;Secret=oVdkseWDNjYbPBlrvVGvNTE3Jdq4a/oNUShR2Tby9Pw=",
-  				                    "type": "Custom",
-			    	                "slotSetting": false
-			                    }
-		            ],
+			{
+                            "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+                            "value": "6dcc2f79-b5a8-47e7-b63f-1ab528afe22c"
+                        },
+                        {
+                            "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+                            "value": "InstrumentationKey=6dcc2f79-b5a8-47e7-b63f-1ab528afe22c;IngestionEndpoint=https://southcentralus-3.in.applicationinsights.azure.com/;LiveEndpoint=https://southcentralus.livediagnostics.monitor.azure.com/"
+                        },
+						{
+                            "name": "ApplicationInsightsAgent_EXTENSION_VERSION",
+                            "value": "~3"
+                        },
+                        {
+                            "name": "tablestorageuri",
+                            "value": "https://stabsb2ccacuat.table.core.windows.net/Auths"
+                        },
+                        {
+                            "name": "trustedRootCAUrl",
+                            "value": "https://stabsb2ccacuat.blob.core.windows.net/caccertroot/certs.zip"
+                        }
+		],
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
-                    "alwaysOn": "[parameters('alwaysOn')]"
+                    "alwaysOn": "[parameters('alwaysOn')]",
+                    "ftpsState": "[parameters('ftpsState')]"
                 },
                 "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
                 "clientAffinityEnabled": false,
+                "virtualNetworkSubnetId": null,
+                "httpsOnly": true,
                 "hostingEnvironmentProfile": "[parameters('hostingEnvironmentProfile')]"
             }
         }
