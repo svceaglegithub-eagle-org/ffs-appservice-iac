@@ -6,27 +6,30 @@
             "value": "02d0afb7-fc62-4bcf-8215-45a2391a7030"
         },
         "name": {
-            "value": "ext-user-mgmt"
+            "value": "b2c-cac-service"
         },
         "location": {
             "value": "southcentralus"
         },
         "hostingPlanName": {
-            "value": "asp-ims-uat"
+            "value": "asp-dev-linux-ext"
         },
         "serverFarmResourceGroup": {
-            "value": "rg-core-uat"
+            "value": "rg-core-dev"
         },
         "alwaysOn": {
             "value": true
         },
+        "ftpsState": {
+            "value": "FtpsOnly"
+        },
         "hostingEnvironmentProfile": {
             "value": {
-                "id": "/subscriptions/02d0afb7-fc62-4bcf-8215-45a2391a7030/resourceGroups/rg-core-uat/providers/Microsoft.Web/hostingEnvironments/ase-ims-uat"
+                "id": "/subscriptions/02d0afb7-fc62-4bcf-8215-45a2391a7030/resourceGroups/rg-core-dev/providers/Microsoft.Web/hostingEnvironments/ase-ims-dev-ext"
             }
         },
         "linuxFxVersion": {
-            "value": "DOTNETCORE|3.0"
+            "value": "DOTNETCORE|6.0"
         }
     }
 }
