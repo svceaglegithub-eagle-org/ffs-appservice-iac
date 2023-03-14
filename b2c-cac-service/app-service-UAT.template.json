@@ -38,7 +38,7 @@
             "type": "Microsoft.Web/sites",
             "location": "[parameters('location')]",
             "tags": {
-                "Environment": "QA",
+                "Environment": "UAT",
                 "Location": "South Central US",
 		"Builder": "Sunil Koirala"
             },
@@ -52,11 +52,11 @@
                     "appSettings": [
 			{
                             "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-                            "value": "6dcc2f79-b5a8-47e7-b63f-1ab528afe22c"
+                            "value": "5f50a238-fdf9-4894-99ee-2a84b1f68c1c"
                         },
                         {
                             "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
-                            "value": "InstrumentationKey=6dcc2f79-b5a8-47e7-b63f-1ab528afe22c;IngestionEndpoint=https://southcentralus-3.in.applicationinsights.azure.com/;LiveEndpoint=https://southcentralus.livediagnostics.monitor.azure.com/"
+                            "value": "InstrumentationKey=5f50a238-fdf9-4894-99ee-2a84b1f68c1c;IngestionEndpoint=https://southcentralus-3.in.applicationinsights.azure.com/;LiveEndpoint=https://southcentralus.livediagnostics.monitor.azure.com/"
                         },
 						{
                             "name": "ApplicationInsightsAgent_EXTENSION_VERSION",
