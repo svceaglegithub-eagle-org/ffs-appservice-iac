@@ -111,7 +111,7 @@
                         },
                         {
                             "name": "ContainerName",
-                            "value": "HKMDFuncVessels"
+                            "value": "hkmdfuncvessels"
                         },
                         {
                             "name": "downloadvesseldata_STORAGE",
