@@ -83,7 +83,7 @@ jobs:
         inputs:
           azureResourceManagerConnection: 'IMS Development'
           subscriptionId: 'd96bdf11-1497-4091-a786-ca95a185dcba'
-          resourceGroupName: 'rg-ffs-dev-001'
+          resourceGroupName: 'rg-core-b2c'
           location: 'South Central US'
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
