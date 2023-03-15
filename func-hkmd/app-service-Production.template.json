@@ -111,7 +111,7 @@
                         },
                         {
                             "name": "UploadUrl",
-                            "value": "https://roecert-test.mardep.gov.hk/RO/webservice/generalDataRev3Service"
+                            "value": "https://roecert.mardep.gov.hk/RO/webservice/generalDataRev3Service"
                         },
                         {
                             "name": "WEBSITE_ENABLE_SYNC_UPDATE_SITE",
