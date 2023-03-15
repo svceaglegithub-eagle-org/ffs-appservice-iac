@@ -47,6 +47,9 @@
             "tags": {
                 "Builder": "Sunil Koirala"
             },
+            "identity": {
+                "type": "SystemAssigned"
+            },  
             "dependsOn": [
                 "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]"
             ],
