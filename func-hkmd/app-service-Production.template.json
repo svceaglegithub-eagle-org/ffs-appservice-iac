@@ -59,6 +59,14 @@
                             "value": "0"
                         },
                         {
+                            "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+                            "value": "8b12ab25-d79b-41d6-b8c3-301983dd5eef"
+                        },
+                        {
+                            "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+                            "value": "InstrumentationKey=8b12ab25-d79b-41d6-b8c3-301983dd5eef;IngestionEndpoint=https://southcentralus-3.in.applicationinsights.azure.com/;LiveEndpoint=https://southcentralus.livediagnostics.monitor.azure.com/"
+                        },
+                        {
                             "name": "FUNCTIONS_EXTENSION_VERSION",
                             "value": "~4"
                         },
@@ -80,7 +88,7 @@
                         },
                         {
                             "name": "ClientId",
-                            "value": "54187c56-fba3-4f75-ba2d-9a1423a3286c"
+                            "value": "2cf1d820-9cb1-49ef-95ad-0a999d0cc0b3"
                         },
                         {
                             "name": "ENABLE_ORYX_BUILD",
@@ -92,19 +100,15 @@
                         },
                         {
                             "name": "SubscriptionId",
-                            "value": "91399246189442e8b432ad3f64f67f57"
+                            "value": "f7a3062223274473bd6ef3f777ed7fb5"
                         },
                         {
                             "name": "TokenEndpoint",
-                            "value": "https://ABSAuthProd.b2clogin.com/ABSAuthProd.onmicrosoft.com/B2C_1A_signup_signin_ROPC/oauth2/v2.0/token"
+                            "value": "https://login.microsoftonline.com/d810b06c-d004-4d52-b0aa-4f3581ee7020/oauth2/v2.0/token"
                         },
                         {
                             "name": "UploadUrl",
                             "value": "https://roecert-test.mardep.gov.hk/RO/webservice/generalDataRev3Service"
-                        },
-                        {
-                            "name": "UserId",
-                            "value": "hongkongflag"
                         },
                         {
                             "name": "WEBSITE_ENABLE_SYNC_UPDATE_SITE",
@@ -112,15 +116,47 @@
                         },
                         {
                             "name": "ContainerName",
-                            "value": "HKMDFuncVessels"
+                            "value": "hkmdfuncvessels"
                         },
                         {
                             "name": "downloadvesseldata_STORAGE",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
                         },
                         {
-                            "name": "Password",
-                            "value": "https://kv-ffs-prod-01.vault.azure.net/secrets/hkmd-func-password/a6969449eafd47cbb9fa79545879e06a"
+                            "name": "CertContainerName",
+                            "value": "hkmdcerts"
+                        },
+                        {
+                            "name": "ClientSecret",
+                            "value": "@Microsoft.KeyVault(SecretUri=https://kv-ffs-prod-01.vault.azure.net/secrets/hkmd-client-secret/ae696da73a8845b982041eb02c6e3359)"
+                        },
+                        {
+                            "name": "CrtFileName",
+                            "value": "abs.crt"
+                        },
+                        {
+                            "name": "ImpersonateUser",
+                            "value": "hongkongflag"
+                        },
+                        {
+                            "name": "KeyFileName",
+                            "value": "abs.key"
+                        },
+                        {
+                            "name": "PemFileName",
+                            "value": "hkmd_all_ca_certs.pem"
+                        },
+                        {
+                            "name": "RoP",
+                            "value": "JZSC8W3U"
+                        },
+                        {
+                            "name": "RoU",
+                            "value": "ABS_TEST"
+                        },
+                        {
+                            "name": "Scope",
+                            "value": "api://2cf1d820-9cb1-49ef-95ad-0a999d0cc0b3/.default"
                         }
                     ],
                     "cors": {
