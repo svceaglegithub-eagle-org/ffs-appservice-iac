@@ -21,6 +21,7 @@ parameters:
       - 'b2c-cac-service'
       - 'func-b2c'
       - 'func-hkmd'
+      - 'func-abspublicrec'
       
   - name: Environment
     type: string
