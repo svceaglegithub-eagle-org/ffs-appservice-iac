@@ -1,1 +1,145 @@
-
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "hostingPlanName": {
+            "type": "string"
+        },
+        "serverFarmResourceGroup": {
+            "type": "string"
+        },
+        "alwaysOn": {
+            "type": "bool"
+        },
+        "use32BitWorkerProcess": {
+            "type": "bool"
+        },
+        "ftpsState": {
+            "type": "string"
+        },
+        "storageAccountName": {
+            "type": "string"
+        },
+        "hostingEnvironmentProfile": {
+            "type": "object"
+        },
+        "linuxFxVersion": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2018-11-01",
+            "name": "[parameters('name')]",
+            "type": "Microsoft.Web/sites",
+            "kind": "functionapp,linux",
+            "location": "[parameters('location')]",
+            "tags": {
+                "Builder": "Sunil Koirala"
+            },
+            "dependsOn": [
+                "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]"
+            ],
+            "properties": {
+                "name": "[parameters('name')]",
+                "siteConfig": {
+                "appSettings": [
+            {
+              "name": "apiTimeoutInterval",
+              "value": "60000"
+            },
+            {
+              "name": "captchaSecret",
+              "value": "6LfeCVglAAAAAPWILzS4PiGqvLX9eTndJak9J8Pf"
+            },
+						{
+							"name": "AzureWebJobsStorage",
+							"value": "DefaultEndpointsProtocol=https;AccountName=stfuncffsuat001;AccountKey=W3fyPuh7BTEC2LHT7rJhdbvSpW2Lo2Bjytrs79HOqf7aSBwqOjzKeVrkcgD26kPGPmyHTH2nk8ya+AStEbEwhQ==;EndpointSuffix=core.windows.net"
+						},
+            {
+              "name": "captchaVerifyV3Url",
+              "value": "https://www.google.com/recaptcha/api/siteverify"
+            },
+            {
+              "name": "maximoApiKey",
+              "value": "8seqgkpfd4hhe00vsmnbum76qi5dum2pvk51n5ot"
+            },
+            {
+              "name": "maximoApiUrlPrefix",
+              "value": "https://freduat.eagle.org/maximo/api"
+            },
+            {
+              "name": "osQueryColumns",
+              "value": "{\"ABSRECORDASSET\":[\"abs_destination_vessel\"],\"ABSRECORDVESSEL\":[ \"assetnum\"],\"ABSRECORDVESSELHIST\":[\"assetnum\"],\"ABSRECORDSERSPEC\": [\"assetnum\"],\"ABSRECORDOWNER\":[\"assetnum\"],\"ABSRECORDSURVEY\":[\"assetnum\"],\"ABSRECORDFINDING\":[\"assetnum\"],\"ABSRECORDCERTIFICATE\":[\"assetnum\"]}"
+            },
+            {
+              "name": "thresholdScore",
+              "value": "0.05"
+            },						
+						{
+							"name": "FUNCTIONS_EXTENSION_VERSION",
+							"value": "~4"
+						},
+						{
+							"name": "FUNCTIONS_WORKER_RUNTIME",
+							"value": "node"
+						},
+						{
+							"name": "WEBSITE_ENABLE_SYNC_UPDATE_SITE",
+							"value": "true"
+						},
+						{
+							"name": "WEBSITE_VNET_ROUTE_ALL",
+							"value": "1"
+						},
+						{
+							"name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+							"value": "true"
+						}
+				],
+                    "cors": {
+                        "allowedOrigins": [
+                            "https://portal.azure.com",
+                            "https://abspublicrecuat.eagle.org"
+                        ]
+                    },
+                    "use32BitWorkerProcess": "[parameters('use32BitWorkerProcess')]",
+                    "ftpsState": "[parameters('ftpsState')]",
+                    "linuxFxVersion": "[parameters('linuxFxVersion')]",
+                    "alwaysOn": "[parameters('alwaysOn')]"
+                },
+                "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
+                "clientAffinityEnabled": false,
+                "virtualNetworkSubnetId": null,
+                "httpsOnly": true,
+                "hostingEnvironmentProfile": "[parameters('hostingEnvironmentProfile')]"
+            }
+        },
+        {
+            "apiVersion": "2019-06-01",
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[parameters('storageAccountName')]",
+            "location": "[parameters('location')]",
+            "tags": {
+                "Builder": "Sunil Koirala"
+            },
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "properties": {
+                "supportsHttpsTrafficOnly": true,
+                "minimumTlsVersion": "TLS1_2"
+            }
+        }
+    ]
+}
