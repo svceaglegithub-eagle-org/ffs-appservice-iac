@@ -56,7 +56,7 @@
                 "appSettings": [
             {
               "name": "apiTimeoutInterval",
-              "value": "60000"
+              "value": "90000"
             },
             {
               "name": "captchaSecret",
@@ -72,7 +72,7 @@
             },
             {
               "name": "maximoApiKey",
-              "value": "8seqgkpfd4hhe00vsmnbum76qi5dum2pvk51n5ot"
+              "value": "238drr9bg0gda28rmpgp2r3fkdm3k8st7kb44vqb"
             },
             {
               "name": "maximoApiUrlPrefix",
