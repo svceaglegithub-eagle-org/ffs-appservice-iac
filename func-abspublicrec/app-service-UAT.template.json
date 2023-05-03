@@ -110,7 +110,8 @@
                     "cors": {
                         "allowedOrigins": [
                             "https://portal.azure.com",
-                            "https://abspublicrecuat.eagle.org"
+                            "https://absrecord-uat.eagle.org",
+			    "https://absecert-uat.eagle.org"
                         ]
                     },
                     "use32BitWorkerProcess": "[parameters('use32BitWorkerProcess')]",
