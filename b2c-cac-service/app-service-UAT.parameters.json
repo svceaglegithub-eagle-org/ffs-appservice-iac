@@ -9,24 +9,19 @@
             "value": "b2c-cac-service"
         },
         "location": {
-            "value": "southcentralus"
+            "value": "South Central US"
         },
         "hostingPlanName": {
-            "value": "asp-dev-linux-ext"
+            "value": "asp-ims-uat-b2c-ext"
         },
         "serverFarmResourceGroup": {
-            "value": "rg-core-dev"
+            "value": "rg-core-b2c"
         },
         "alwaysOn": {
             "value": true
         },
         "ftpsState": {
             "value": "FtpsOnly"
-        },
-        "hostingEnvironmentProfile": {
-            "value": {
-                "id": "/subscriptions/02d0afb7-fc62-4bcf-8215-45a2391a7030/resourceGroups/rg-core-dev/providers/Microsoft.Web/hostingEnvironments/ase-ims-dev-ext"
-            }
         },
         "linuxFxVersion": {
             "value": "DOTNETCORE|6.0"
