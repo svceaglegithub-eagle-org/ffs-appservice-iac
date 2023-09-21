@@ -153,7 +153,7 @@ jobs:
         inputs:
           azureResourceManagerConnection: 'IMS UAT'
           subscriptionId: '02d0afb7-fc62-4bcf-8215-45a2391a7030'
-          resourceGroupName: 'rg-ffs-uat'
+          resourceGroupName: 'rg-core-b2c'
           location: 'South Central US'
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
