@@ -23,9 +23,6 @@
         "ftpsState": {
             "type": "string"
         },
-        "hostingEnvironmentProfile": {
-            "type": "object"
-        },
         "linuxFxVersion": {
             "type": "string"
         }
@@ -38,39 +35,44 @@
             "type": "Microsoft.Web/sites",
             "location": "[parameters('location')]",
             "tags": {
-                "Environment": "UAT",
-                "Location": "South Central US",
-		"Builder": "Sunil Koirala"
+                "Builder": "Sunil Koirala",
+                "Access-Approvers": "Chandra Gullapalli",
+                "Build-Date": "9/21/2023",
+                "Project": "My Freedom B2C"
             },
             "dependsOn": [],
-	    "identity": {
-		"type": "SystemAssigned"
+		    "identity": {
+				"type": "SystemAssigned"
             },
             "properties": {
                 "name": "[parameters('name')]",
                 "siteConfig": {
                     "appSettings": [
-			{
-                            "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-                            "value": "5f50a238-fdf9-4894-99ee-2a84b1f68c1c"
-                        },
                         {
                             "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
                             "value": "InstrumentationKey=5f50a238-fdf9-4894-99ee-2a84b1f68c1c;IngestionEndpoint=https://southcentralus-3.in.applicationinsights.azure.com/;LiveEndpoint=https://southcentralus.livediagnostics.monitor.azure.com/"
                         },
-						{
+                        {
                             "name": "ApplicationInsightsAgent_EXTENSION_VERSION",
                             "value": "~3"
                         },
+						{
+							"name": "tablestorageuri",
+							"value": "https://stabsb2ccac.table.core.windows.net/AuthsUAT"
+						},
+						{
+							"name": "trustedRootCAUrl",
+							"value": "https://stabsb2ccac.blob.core.windows.net/caccertroot-uat/CombinedCerts.zip"
+						},
+						{
+							"name": "ValidationCertificates",
+							"value": "MIIDEzCCAfugAwIBAgIQYLaMJaZyx4JOWnC/Zc6QrjANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQEDAlDZXJ0QXBwQ0EwHhcNMjMwMzEzMTcxMjAxWhcNMjQwMzEzMTcyMjAxWjAUMRIwEAYDVQQEDAlDZXJ0QXBwQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCeDVaB9dWpJKdxnxRaeHI9KAEO0LehPiBHINwVfHPuwnzYiwZQ+3AVIID4c3rD4P3N2VGj6vjKU8xtjlgoiTQlGrhusbAfr/hw73fxRe2TLsBf1uUa0BzZEzRcTOB+a/5a8VnEagmSf8/YCIjkPaxJCuMkiUU+bLrDAXSlWdVqHiQdITa1l2Q2niAkwek2lEhTCGEb7S+5l96oU8dY9T3zVR5qCXQWPY6smh+RQablWt9b3H/DsvnAtFP76TM8uw6iq1HugZA3I20cYSLH4S5qFsqMDTL/elZ2In0NUxoFQnZVQ2oI7yjPpZ7vjLX2CI8e2s+yC6HDz+hqEDLldPRNAgMBAAGjYTBfMA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUYxDIoXjbnzAQ9u895JW3YSygVIwwDQYJKoZIhvcNAQEFBQADggEBACkJANwnIZCnGha0zcVfnhz7ft8gWLvQ83/NDFB/BuU2SDeGkNjfIQjMqRCOHQj/93tYNN2l/xkANUuBgt6vbYJOUfHpV26amIKoyTcBSg1WIuqLw+aYgkMr+EL0RfzScog0V1ubhRoLlWppF5s97xs9sFehDbvE5UDK2l3GlTF7trD9IfHk51fp5XbY6y2CXE4A1SFcvAyzNYJdbpMpQ+bY10UNdLlGu3mW3MX5mIWVH/xJHLo03Ho7iv/SMyTcljBNXQSNDWuA4hB7tDbQiy2crtBFYcxvxCjF9e4z02L6rzWnlyTXqhsitgTEVCSm1h3SsgC59DmUnVRIvRh8sN4="
+						},
                         {
-                            "name": "tablestorageuri",
-                            "value": "https://stabsb2ccacuat.table.core.windows.net/Auths"
-                        },
-                        {
-                            "name": "trustedRootCAUrl",
-                            "value": "https://stabsb2ccacuat.blob.core.windows.net/caccertroot/certs.zip"
+                            "name": "XDT_MicrosoftApplicationInsights_Mode",
+                            "value": "Recommended"
                         }
-		],
+                    ],
                     "linuxFxVersion": "[parameters('linuxFxVersion')]",
                     "alwaysOn": "[parameters('alwaysOn')]",
                     "ftpsState": "[parameters('ftpsState')]"
@@ -79,7 +81,7 @@
                 "clientAffinityEnabled": false,
                 "virtualNetworkSubnetId": null,
                 "httpsOnly": true,
-                "hostingEnvironmentProfile": "[parameters('hostingEnvironmentProfile')]"
+                "publicNetworkAccess": "Enabled"
             }
         }
     ]
