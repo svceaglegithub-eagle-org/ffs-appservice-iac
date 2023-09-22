@@ -6,27 +6,25 @@
             "value": "1e9801a1-93d1-4fd8-98a1-faf8faa915d5"
         },
         "name": {
-            "value": "ext-user-mgmt"
+            "value": "b2c-cac-service-prod"
         },
         "location": {
-            "value": "southcentralus"
+            "value": "South Central US"
         },
         "hostingPlanName": {
-            "value": "asp-ims-prod-linux"
+            "value": "asp-ims-prod-b2c-ext"
         },
         "serverFarmResourceGroup": {
-            "value": "rg-core-prod"
+            "value": "rg-core-b2c"
         },
         "alwaysOn": {
             "value": true
         },
-        "hostingEnvironmentProfile": {
-            "value": {
-                "id": "/subscriptions/1e9801a1-93d1-4fd8-98a1-faf8faa915d5/resourceGroups/rg-core-prod/providers/Microsoft.Web/hostingEnvironments/ase-ims-prod"
-            }
+        "ftpsState": {
+            "value": "FtpsOnly"
         },
         "linuxFxVersion": {
-            "value": "DOTNETCORE|3.0"
+            "value": "DOTNETCORE|6.0"
         }
     }
 }
