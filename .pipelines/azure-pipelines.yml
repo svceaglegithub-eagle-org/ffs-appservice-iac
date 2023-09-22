@@ -176,7 +176,7 @@ jobs:
         inputs:
           azureResourceManagerConnection: 'IMS Production'
           subscriptionId: '1e9801a1-93d1-4fd8-98a1-faf8faa915d5'
-          resourceGroupName: 'rg-ffs-prod'
+          resourceGroupName: 'rg-core-b2c'
           location: 'South Central US'
           csmFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.template.json'
           csmParametersFile: '$(build.artifactstagingdirectory)/${{parameters.AppServiceName}}/app-service-${{parameters.Environment}}.parameters.json'
